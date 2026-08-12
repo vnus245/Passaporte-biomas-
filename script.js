@@ -96,843 +96,850 @@ const paises = [
    BANCO DE PERGUNTAS
 ========================= */
 
-const perguntas = {
-brasil: {
+            const paises = {
 
-facil: [
+  // =========================================================
+  // 🇧🇷 BRASIL
+  // =========================================================
 
-    {
-        pergunta: "Qual é a capital do Brasil?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Brasília",
-            "São Paulo",
-            "Rio de Janeiro",
-            "Salvador"
-        ],
-        correta: 0
-    },
+  brasil: {
+    nome: "Brasil",
+    bandeira: "🇧🇷",
 
-    {
-        pergunta: "Qual é o maior bioma brasileiro em extensão territorial?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Pantanal",
-            "Cerrado",
-            "Amazônia",
-            "Caatinga"
-        ],
-        correta: 2
-    },
+    perguntas: [
 
-    {
-        pergunta: "Qual destas opções é uma planta ou alimento de origem vegetal muito presente na culinária brasileira?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Tapioca",
-            "Sushi",
-            "Hambúrguer",
-            "Pizza"
-        ],
-        correta: 0,
-        referencia: true
-    }
+      // 🟢 FÁCIL
+      {
+        dificuldade: "facil",
+        categoria: "Bioma",
+        pergunta: "Qual é o maior bioma do Brasil?",
+        alternativas: {
+          A: "Amazônia",
+          B: "Caatinga",
+          C: "Pantanal",
+          D: "Pampa"
+        },
+        resposta: "A",
+        pontos: 10
+      },
 
-],
+      {
+        dificuldade: "facil",
+        categoria: "Vegetação",
+        pergunta: "Qual planta tem grande importância na culinária brasileira?",
+        alternativas: {
+          A: "Oliveira",
+          B: "Mandioca",
+          C: "Trigo",
+          D: "Tâmara"
+        },
+        resposta: "B",
+        pontos: 10
+      },
 
+      {
+        dificuldade: "facil",
+        categoria: "Fauna",
+        pergunta: "Qual destes animais faz parte da fauna brasileira?",
+        alternativas: {
+          A: "Canguru",
+          B: "Urso-polar",
+          C: "Onça-pintada",
+          D: "Panda"
+        },
+        resposta: "C",
+        pontos: 10
+      },
 
-medio: [
+      // 🟡 MÉDIO
+      {
+        dificuldade: "medio",
+        categoria: "Clima",
+        pergunta: "Qual clima predomina em grande parte da Amazônia?",
+        alternativas: {
+          A: "Polar",
+          B: "Equatorial",
+          C: "Mediterrâneo",
+          D: "Desértico"
+        },
+        resposta: "B",
+        pontos: 20
+      },
 
-    {
-        pergunta: "Qual bioma brasileiro é conhecido pelo clima semiárido e pela vegetação adaptada à pouca disponibilidade de água?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Pampa",
-            "Caatinga",
-            "Pantanal",
-            "Mata Atlântica"
-        ],
-        correta: 1
-    },
+      {
+        dificuldade: "medio",
+        categoria: "Bioma",
+        pergunta: "Qual bioma é conhecido por períodos de seca e vegetação adaptada à falta de água?",
+        alternativas: {
+          A: "Caatinga",
+          B: "Pampa",
+          C: "Pantanal",
+          D: "Mata Atlântica"
+        },
+        resposta: "C",
+        pontos: 20
+      },
 
-    {
-        pergunta: "Por que o Pantanal apresenta grandes mudanças na paisagem durante o ano?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Por causa das variações entre períodos de cheia e de seca",
-            "Por causa da ocorrência de neve",
-            "Por causa de terremotos frequentes",
-            "Por causa de erupções vulcânicas"
-        ],
-        correta: 0
-    },
+      {
+        dificuldade: "medio",
+        categoria: "Fauna",
+        pergunta: "Qual animal é muito associado ao Pantanal?",
+        alternativas: {
+          A: "Girafa",
+          B: "Onça-pintada",
+          C: "Rena",
+          D: "Foca"
+        },
+        resposta: "D",
+        pontos: 20
+      },
 
-    {
-        pergunta: "Qual característica é comum à vegetação da Caatinga?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Presença de plantas adaptadas a períodos de pouca água",
-            "Predomínio de árvores típicas de florestas temperadas",
-            "Vegetação formada principalmente por musgos de regiões polares",
-            "Predomínio de plantas de clima equatorial úmido"
-        ],
-        correta: 0
-    }
+      // 🔴 DIFÍCIL
+      {
+        dificuldade: "dificil",
+        categoria: "Vegetação",
+        pergunta: "Qual característica é comum na vegetação do Cerrado?",
+        alternativas: {
+          A: "Árvores e plantas adaptadas ao período seco",
+          B: "Árvores cobertas de neve",
+          C: "Apenas plantas aquáticas",
+          D: "Vegetação exclusivamente de coníferas"
+        },
+        resposta: "A",
+        pontos: 30
+      },
 
-],
+      {
+        dificuldade: "dificil",
+        categoria: "Cultura",
+        pergunta: "Qual destes alimentos possui forte influência indígena na culinária brasileira?",
+        alternativas: {
+          A: "Sushi",
+          B: "Mandioca",
+          C: "Paella",
+          D: "Croissant"
+        },
+        resposta: "B",
+        pontos: 30
+      },
 
+      {
+        dificuldade: "dificil",
+        categoria: "Sociedade",
+        pergunta: "Qual grupo possui uma relação histórica e cultural muito importante com os biomas brasileiros?",
+        alternativas: {
+          A: "Povos indígenas",
+          B: "Vikings",
+          C: "Samurais",
+          D: "Faraós"
+        },
+        resposta: "D",
+        pontos: 30
+      },
 
-dificil: [
-
-    {
-        pergunta: "Por que a Amazônia apresenta uma biodiversidade tão elevada?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Porque possui condições ambientais variadas, grande quantidade de água e uma enorme diversidade de habitats",
-            "Porque possui apenas um tipo de animal",
-            "Porque apresenta clima polar",
-            "Porque não possui rios"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual característica ajuda a explicar a vegetação encontrada no Pampa?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Predomínio de campos e vegetação rasteira",
-            "Predomínio de florestas tropicais densas",
-            "Presença de vegetação típica de tundra",
-            "Predomínio de cactos de regiões desérticas"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual destes ambientes está relacionado à presença histórica de diferentes povos indígenas no território brasileiro?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Amazônia",
-            "Deserto do Saara",
-            "Tundra Ártica",
-            "Povos indígenas"
-        ],
-        correta: 0,
-        referencia: true
-    }
-
-],
-
-
-especial: {
-
-    pergunta: "Qual alternativa reúne corretamente características naturais encontradas no Brasil?",
-    categoria: "🌳 Biomas",
-    alternativas: [
-        "Amazônia, Cerrado, Caatinga, Pantanal, Mata Atlântica e Pampa",
-        "Tundra, Taiga, Deserto do Saara e Savana Africana",
-        "Alpes, Andes, Tundra e Floresta Boreal",
-        "Deserto Australiano, Taiga e Floresta Mediterrânea"
+      // ⭐ ESPECIAL
+      {
+        dificuldade: "especial",
+        categoria: "Biomas",
+        pergunta: "Qual alternativa apresenta somente biomas brasileiros?",
+        alternativas: {
+          A: "Amazônia, Cerrado e Caatinga",
+          B: "Saara, Tundra e Amazônia",
+          C: "Taiga, Tundra e Pampa",
+          D: "Savana africana, Taiga e Cerrado"
+        },
+        resposta: "A",
+        pontos: 50
+      }
     ],
-    correta: 0
 
-},
-curiosidades: [
-    "O Brasil é o maior país da América do Sul e possui uma enorme variedade de paisagens e ambientes naturais.",
-
-    "A Amazônia é a maior floresta tropical do mundo e ocupa uma grande parte do território brasileiro.",
-
-    "O Brasil é um dos países com maior diversidade de espécies de animais e plantas do planeta."
-],
-},
-
-argentina: {
-
-facil: [
-
-    {
-        pergunta: "Qual é a capital da Argentina?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Buenos Aires",
-            "Córdoba",
-            "Mendoza",
-            "Rosário"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual grande cadeia de montanhas está localizada no oeste da Argentina?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Alpes",
-            "Himalaia",
-            "Andes",
-            "Montanhas Rochosas"
-        ],
-        correta: 2
-    },
-
-    {
-        pergunta: "Qual característica é comum nas áreas de clima mais quente do norte da Argentina?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Temperaturas mais elevadas em comparação com o extremo sul",
-            "Clima polar durante todo o ano",
-            "Presença permanente de gelo",
-            "Ausência completa de chuvas"
-        ],
-        correta: 0
-    }
-
-],
-
-
-medio: [
-
-    {
-        pergunta: "Qual característica é marcante da região dos Pampas argentinos?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Florestas tropicais muito densas",
-            "Grandes planícies com campos e vegetação rasteira",
-            "Vegetação típica de tundra",
-            "Desertos cobertos por gelo"
-        ],
-        correta: 1
-    },
-
-    {
-        pergunta: "Qual região da Argentina é conhecida por suas estepes, montanhas, lagos e geleiras?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Chaco",
-            "Pampas",
-            "Patagônia",
-            "Mesopotâmia"
-        ],
-        correta: 2
-    },
-
-    {
-        pergunta: "Qual destes animais pode ser encontrado em ambientes naturais da Argentina?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Canguru",
-            "Puma",
-            "Panda-gigante",
-            "Mafalda"
-        ],
-        correta: 1,
-        referencia: true
-    }
-
-],
-
-
-dificil: [
-
-    {
-        pergunta: "Por que a vegetação da Patagônia é adaptada a condições mais frias e secas?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Por causa das baixas temperaturas, dos ventos e da menor disponibilidade de água em várias áreas",
-            "Por causa do clima equatorial extremamente úmido",
-            "Por causa das altas temperaturas durante todo o ano",
-            "Por causa das chuvas constantes em toda a região"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Como a Cordilheira dos Andes influencia o clima de algumas regiões da Argentina?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Pode dificultar a passagem de massas de ar úmidas e contribuir para áreas mais secas",
-            "Faz todas as regiões argentinas terem clima tropical",
-            "Provoca clima polar em todo o território",
-            "Impede completamente a formação de rios"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual característica dos Pampas favorece atividades agropecuárias?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "A presença de solos férteis e extensas áreas de campos",
-            "A presença de grandes geleiras",
-            "O predomínio de florestas tropicais",
-            "A ocorrência de neve durante todo o ano"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual destes elementos está fortemente associado à cultura esportiva argentina?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Críquete",
-            "Futebol",
-            "Hóquei no gelo",
-            "Beisebol"
-        ],
-        correta: 1,
-        referencia: true
-    }
-
-],
-
-
-especial: {
-
-    pergunta: "Qual alternativa reúne corretamente características naturais da Argentina?",
-    categoria: "🌳 Biomas",
-    alternativas: [
-        "Andes, Pampas, Patagônia e diferentes zonas climáticas",
-        "Floresta Amazônica, tundra e clima equatorial",
-        "Deserto do Saara, savanas africanas e clima tropical",
-        "Taiga, geleiras permanentes e clima polar em todo o território"
+    referencias: [
+      "🍹 Referência: 'É o Brasil!'",
+      "🗿 Referência a memes envolvendo situações inesperadas no Brasil."
     ],
-    correta: 0
 
-},
-curiosidades: [
-    "A Argentina possui a Cordilheira dos Andes em sua região oeste, formando uma das maiores cadeias montanhosas do mundo.",
-
-    "O Aconcágua, localizado na Argentina, é a montanha mais alta das Américas.",
-
-    "A Patagônia ocupa uma grande área no sul do país e possui paisagens com montanhas, estepes, lagos e geleiras."
-],
-
-},
-uruguai: {
-
-facil: [
-
-    {
-        pergunta: "Qual é a capital do Uruguai?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Montevidéu",
-            "Salto",
-            "Punta del Este",
-            "Colônia do Sacramento"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual oceano banha a costa do Uruguai?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Oceano Pacífico",
-            "Oceano Índico",
-            "Oceano Atlântico",
-            "Oceano Ártico"
-        ],
-        correta: 2
-    },
-
-    {
-        pergunta: "Qual bebida tradicional é muito consumida no Uruguai?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Café",
-            "Mate",
-            "Chá preto",
-            "Chocolate quente"
-        ],
-        correta: 1,
-        referencia: true
-    }
-
-],
-
-
-medio: [
-
-    {
-        pergunta: "Qual é uma característica marcante da paisagem natural do Uruguai?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Grandes florestas tropicais",
-            "Extensos desertos",
-            "Predomínio de campos e pradarias",
-            "Grandes geleiras"
-        ],
-        correta: 2
-    },
-
-    {
-        pergunta: "Por que a criação de gado possui grande importância no Uruguai?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "A presença de extensas áreas de pastagens favorece a criação de animais",
-            "O país possui grandes áreas de tundra",
-            "O território é coberto principalmente por desertos",
-            "As temperaturas permanecem abaixo de zero durante todo o ano"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual característica climática é comum no Uruguai?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Clima equatorial extremamente quente",
-            "Clima polar durante todo o ano",
-            "Clima desértico",
-            "Clima temperado, com influência marítima"
-        ],
-        correta: 3
-    }
-
-],
-
-
-dificil: [
-
-    {
-        pergunta: "Qual fator ajuda a explicar a predominância de campos naturais no território uruguaio?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "A presença de uma grande floresta equatorial",
-            "As condições de clima, relevo e solo favorecem a formação de áreas campestres",
-            "As temperaturas negativas durante todo o ano",
-            "A ausência completa de chuvas"
-        ],
-        correta: 1
-    },
-
-    {
-        pergunta: "Como a localização do Uruguai influencia suas características ambientais?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Sua posição no sudeste da América do Sul contribui para um clima temperado e sofre influência marítima",
-            "Sua localização próxima ao Equador provoca clima equatorial",
-            "Sua proximidade com o Polo Sul provoca clima polar",
-            "Sua localização impede qualquer influência marítima"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual destes animais pode ser encontrado em ambientes naturais do Uruguai?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Canguru",
-            "Panda-gigante",
-            "Capivara",
-            "Urso-polar"
-        ],
-        correta: 2
-    },
-
-    {
-        pergunta: "Qual destes nomes está associado a um famoso jogador de futebol uruguaio?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Lionel Messi",
-            "Luis Suárez",
-            "Neymar",
-            "Kylian Mbappé"
-        ],
-        correta: 1,
-        referencia: true
-    }
-
-],
-
-
-especial: {
-
-    pergunta: "Qual alternativa reúne corretamente características naturais do Uruguai?",
-    categoria: "🌳 Biomas",
-    alternativas: [
-        "Campos e pradarias, clima temperado e áreas costeiras",
-        "Florestas tropicais, clima equatorial e grandes geleiras",
-        "Desertos quentes, clima árido e ausência de rios",
-        "Tundra, clima polar e vegetação de coníferas"
-    ],
-    correta: 0
-
-
-
-},
-
-curiosidades: [
-    "O Uruguai é um dos menores países da América do Sul e possui muitas áreas de campos e pradarias.",
-
-    "A criação de gado possui grande importância no país devido à presença de extensas áreas de pastagens.",
-
-    "O mate é uma bebida muito presente na cultura uruguaia e faz parte do cotidiano de muitas pessoas."
-],
-    
-},
-
-estadosUnidos: {
-
-facil: [
-
-    {
-        pergunta: "Qual é a capital dos Estados Unidos?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Nova York",
-            "Washington, D.C.",
-            "Los Angeles",
-            "Chicago"
-        ],
-        correta: 1
-    },
-
-    {
-        pergunta: "Qual oceano banha a costa leste dos Estados Unidos?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Oceano Pacífico",
-            "Oceano Índico",
-            "Oceano Atlântico",
-            "Oceano Ártico"
-        ],
-        correta: 2
-    },
-
-    {
-        pergunta: "Qual destes animais faz parte da fauna dos Estados Unidos?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Águia-careca",
-            "Canguru",
-            "Onça-pintada",
-            "Panda-gigante"
-        ],
-        correta: 0
-    }
-
-],
-
-
-medio: [
-
-    {
-        pergunta: "Qual ambiente natural aparece em regiões do sudoeste dos Estados Unidos, onde o clima é muito seco?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Deserto",
-            "Tundra",
-            "Floresta tropical",
-            "Manguezal"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual destes ambientes NÃO é encontrado naturalmente nos Estados Unidos?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Pradarias",
-            "Florestas temperadas",
-            "Desertos",
-            "Fenda do Biquíni"
-        ],
-        correta: 3,
-        referencia: true
-    },
-
-    {
-        pergunta: "Qual região dos Estados Unidos apresenta paisagens de tundra e temperaturas muito baixas?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Flórida",
-            "Alasca",
-            "Texas",
-            "Califórnia"
-        ],
-        correta: 1
-    }
-
-],
-
-
-dificil: [
-
-    {
-        pergunta: "Por que os Estados Unidos apresentam uma grande variedade de climas?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Por causa de sua grande extensão territorial, relevo e diferentes influências atmosféricas",
-            "Porque todo o país está localizado na região tropical",
-            "Porque o país possui apenas regiões montanhosas",
-            "Porque não existem variações de relevo"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Como as Montanhas Rochosas podem influenciar o clima de áreas próximas?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Podem dificultar a passagem de massas de ar e influenciar a distribuição das chuvas",
-            "Fazem todo o país possuir clima tropical",
-            "Eliminam completamente os rios da região",
-            "Fazem nevar durante todo o ano em todos os estados"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual destes animais pode ser encontrado em ambientes naturais dos Estados Unidos?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Bob Esponja",
-            "Bisão-americano",
-            "Canguru",
-            "Panda-gigante"
-        ],
-        correta: 1,
-        referencia: true
-    }
-
-],
-
-
-especial: {
-
-    pergunta: "Qual alternativa apresenta três ambientes naturais encontrados nos Estados Unidos?",
-    categoria: "🌳 Biomas",
-    alternativas: [
-        "Desertos, pradarias e tundra",
-        "Caatinga, Pantanal e Cerrado",
-        "Floresta Amazônica, Pampa e tundra",
-        "Savana africana, Taiga siberiana e Caatinga"
-    ],
-    correta: 0
-
-}
-
-},
     curiosidades: [
+      "🌳 O Brasil possui seis biomas terrestres principais.",
+      "🦜 O país possui uma das maiores biodiversidades do mundo.",
+      "🥥 A mandioca possui grande importância na culinária brasileira."
+    ]
+  },
 
-        "Os Estados Unidos possuem uma enorme variedade de paisagens, incluindo desertos, pradarias, florestas, montanhas e tundras.",
 
-        "O Alasca é o maior estado dos Estados Unidos e possui grandes áreas de montanhas, florestas e regiões muito frias.",
+  // =========================================================
+  // 🇦🇷 ARGENTINA
+  // =========================================================
 
-        "O país possui uma das maiores extensões territoriais do mundo, atravessando diferentes zonas climáticas."
+  argentina: {
+    nome: "Argentina",
+    bandeira: "🇦🇷",
 
+    perguntas: [
+
+      // 🟢 FÁCIL
+      {
+        dificuldade: "facil",
+        categoria: "Fauna",
+        pergunta: "Qual animal pode ser encontrado na Argentina?",
+        alternativas: {
+          A: "Canguru",
+          B: "Guanaco",
+          C: "Panda",
+          D: "Girafa"
+        },
+        resposta: "B",
+        pontos: 10
+      },
+
+      {
+        dificuldade: "facil",
+        categoria: "Vegetação",
+        pergunta: "Qual formação vegetal ocupa grandes áreas das planícies argentinas?",
+        alternativas: {
+          A: "Floresta amazônica",
+          B: "Tundra",
+          C: "Manguezal",
+          D: "Pampas"
+        },
+        resposta: "C",
+        pontos: 10
+      },
+
+      {
+        dificuldade: "facil",
+        categoria: "Clima",
+        pergunta: "Qual região argentina é conhecida pelas baixas temperaturas?",
+        alternativas: {
+          A: "Patagônia",
+          B: "Amazônia",
+          C: "Caribe",
+          D: "Saara"
+        },
+        resposta: "A",
+        pontos: 10
+      },
+
+      // 🟡 MÉDIO
+      {
+        dificuldade: "medio",
+        categoria: "Bioma",
+        pergunta: "Os Pampas são conhecidos principalmente por:",
+        alternativas: {
+          A: "Florestas tropicais",
+          B: "Campos e planícies",
+          C: "Desertos de gelo",
+          D: "Manguezais"
+        },
+        resposta: "D",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Fauna",
+        pergunta: "Qual ave é encontrada na região dos Andes?",
+        alternativas: {
+          A: "Condor-andino",
+          B: "Avestruz africano",
+          C: "Pinguim-imperador",
+          D: "Tucano amazônico"
+        },
+        resposta: "A",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Clima",
+        pergunta: "A Patagônia apresenta principalmente condições:",
+        alternativas: {
+          A: "Tropicais",
+          B: "Equatoriais",
+          C: "Frias e secas em várias áreas",
+          D: "Desérticas tropicais"
+        },
+        resposta: "B",
+        pontos: 20
+      },
+
+      // 🔴 DIFÍCIL
+      {
+        dificuldade: "dificil",
+        categoria: "Bioma",
+        pergunta: "Qual ambiente aparece em regiões áridas do oeste argentino?",
+        alternativas: {
+          A: "Floresta equatorial",
+          B: "Manguezal",
+          C: "Tundra tropical",
+          D: "Ambientes áridos e semiáridos"
+        },
+        resposta: "C",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Fauna",
+        pergunta: "O condor-andino está principalmente associado a qual região?",
+        alternativas: {
+          A: "Amazônia",
+          B: "Cordilheira dos Andes",
+          C: "Oceania",
+          D: "Deserto africano"
+        },
+        resposta: "D",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Sociedade",
+        pergunta: "Qual tradição argentina é muito relacionada aos gaúchos?",
+        alternativas: {
+          A: "Vida rural e criação de gado",
+          B: "Pesca no Ártico",
+          C: "Navegação viking",
+          D: "Cultivo de arroz tropical"
+        },
+        resposta: "A",
+        pontos: 30
+      },
+
+      // ⭐ ESPECIAL
+      {
+        dificuldade: "especial",
+        categoria: "Natureza",
+        pergunta: "Qual conjunto apresenta ambientes encontrados na Argentina?",
+        alternativas: {
+          A: "Amazônia, Pantanal e Caatinga",
+          B: "Pampas, Patagônia e Andes",
+          C: "Saara, Savana e Taiga",
+          D: "Tundra, Amazônia e Cerrado"
+        },
+        resposta: "B",
+        pontos: 50
+      }
     ],
 
-},
-
-espanha: {
-
-    facil: [
-
-        {
-            pergunta: "Qual é a capital da Espanha?",
-            alternativas: [
-                "Barcelona",
-                "Sevilha",
-                "Madri",
-                "Valência"
-            ],
-            correta: 2
-        },
-
-        {
-            pergunta: "Qual mar banha grande parte da costa leste e sudeste da Espanha?",
-            alternativas: [
-                "Mar Mediterrâneo",
-                "Mar do Norte",
-                "Mar Negro",
-                "Mar Báltico"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Qual destas cidades está localizada na Espanha?",
-            alternativas: [
-                "Lisboa",
-                "Barcelona",
-                "Roma",
-                "Berlim"
-            ],
-            correta: 1
-        }
-
+    referencias: [
+      "⚽ Referência: memes sobre a rivalidade futebolística entre Argentina e Brasil.",
+      "🧉 Referência: memes sobre o mate fazer parte do cotidiano argentino."
     ],
 
+    curiosidades: [
+      "🏔️ A Argentina possui parte da Cordilheira dos Andes.",
+      "🐧 Existem colônias de pinguins na Patagônia.",
+      "🥩 A criação de gado possui grande importância no país."
+    ]
+  },
 
-    medio: [
 
-        {
-            pergunta: "Qual tipo de clima é comum em várias áreas do interior da Espanha?",
-            alternativas: [
-                "Clima equatorial",
-                "Clima polar",
-                "Clima continental",
-                "Clima de monções"
-            ],
-            correta: 2
+  // =========================================================
+  // 🇺🇾 URUGUAI
+  // =========================================================
+
+  uruguai: {
+    nome: "Uruguai",
+    bandeira: "🇺🇾",
+
+    perguntas: [
+
+      // 🟢 FÁCIL
+      {
+        dificuldade: "facil",
+        categoria: "Fauna",
+        pergunta: "Qual animal pode ser encontrado no Uruguai?",
+        alternativas: {
+          A: "Canguru",
+          B: "Panda",
+          C: "Capivara",
+          D: "Urso-polar"
         },
+        resposta: "C",
+        pontos: 10
+      },
 
-        {
-            pergunta: "Qual característica é comum na vegetação das áreas mediterrâneas da Espanha?",
-            alternativas: [
-                "Florestas tropicais muito úmidas",
-                "Vegetação formada apenas por musgos",
-                "Vegetação adaptada exclusivamente ao gelo",
-                "Plantas adaptadas a verões quentes e secos"
-            ],
-            correta: 3
+      {
+        dificuldade: "facil",
+        categoria: "Vegetação",
+        pergunta: "Qual tipo de paisagem vegetal é muito comum no Uruguai?",
+        alternativas: {
+          A: "Campos e pastagens",
+          B: "Floresta amazônica",
+          C: "Tundra",
+          D: "Taiga"
         },
+        resposta: "A",
+        pontos: 10
+      },
 
-        {
-            pergunta: "Qual destes países conquistou a Copa do Mundo de 2026?",
-            alternativas: [
-                "Alemanha",
-                "Espanha",
-                "França",
-                "Itália"
-            ],
-            correta: 1,
-            referencia: true
-        }
+      {
+        dificuldade: "facil",
+        categoria: "Clima",
+        pergunta: "O clima do Uruguai é predominantemente:",
+        alternativas: {
+          A: "Polar",
+          B: "Desértico",
+          C: "Equatorial",
+          D: "Temperado"
+        },
+        resposta: "B",
+        pontos: 10
+      },
 
+      // 🟡 MÉDIO
+      {
+        dificuldade: "medio",
+        categoria: "Bioma",
+        pergunta: "As paisagens naturais do Uruguai apresentam principalmente:",
+        alternativas: {
+          A: "Campos",
+          B: "Grandes desertos",
+          C: "Florestas equatoriais",
+          D: "Tundra"
+        },
+        resposta: "A",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Fauna",
+        pergunta: "Qual animal também pode ser encontrado em áreas do Uruguai?",
+        alternativas: {
+          A: "Girafa",
+          B: "Urso-polar",
+          C: "Capivara",
+          D: "Camelo"
+        },
+        resposta: "D",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Clima",
+        pergunta: "O Uruguai apresenta estações do ano relativamente bem definidas?",
+        alternativas: {
+          A: "Não, só existe verão",
+          B: "Sim",
+          C: "Não, só existe inverno",
+          D: "Não existem estações"
+        },
+        resposta: "C",
+        pontos: 20
+      },
+
+      // 🔴 DIFÍCIL
+      {
+        dificuldade: "dificil",
+        categoria: "Vegetação",
+        pergunta: "Os campos naturais são importantes para qual atividade no Uruguai?",
+        alternativas: {
+          A: "Extração de gelo",
+          B: "Pesca no Ártico",
+          C: "Cultivo de plantas tropicais",
+          D: "Pecuária"
+        },
+        resposta: "B",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Bioma",
+        pergunta: "O Uruguai está inserido principalmente em uma região de:",
+        alternativas: {
+          A: "Campos temperados",
+          B: "Florestas equatoriais",
+          C: "Tundra",
+          D: "Desertos tropicais"
+        },
+        resposta: "A",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Sociedade",
+        pergunta: "Qual bebida é muito associada ao cotidiano uruguaio?",
+        alternativas: {
+          A: "Café turco",
+          B: "Suco de manga",
+          C: "Mate",
+          D: "Chá de gelo"
+        },
+        resposta: "D",
+        pontos: 30
+      },
+
+      // ⭐ ESPECIAL
+      {
+        dificuldade: "especial",
+        categoria: "Natureza",
+        pergunta: "Qual conjunto representa melhor as características naturais do Uruguai?",
+        alternativas: {
+          A: "Floresta equatorial, clima polar e ursos",
+          B: "Deserto, clima tropical e camelos",
+          C: "Campos, clima temperado e fauna de áreas abertas",
+          D: "Tundra, gelo permanente e renas"
+        },
+        resposta: "C",
+        pontos: 50
+      }
     ],
 
-
-    dificil: [
-
-        {
-            pergunta: "Por que existem diferenças climáticas importantes entre o norte e o interior da Espanha?",
-            alternativas: [
-                "Porque o relevo e a distância do oceano influenciam a distribuição de temperatura e chuva",
-                "Porque todo o território possui o mesmo tipo de relevo",
-                "Porque o país possui apenas clima mediterrâneo",
-                "Porque não existem montanhas na Espanha"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Como as áreas montanhosas da Espanha podem influenciar a vegetação?",
-            alternativas: [
-                "A altitude faz toda a vegetação desaparecer",
-                "As montanhas transformam todas as áreas em desertos",
-                "A altitude pode provocar mudanças de temperatura e favorecer diferentes tipos de vegetação",
-                "A altitude impede qualquer ocorrência de chuva"
-            ],
-            correta: 2
-        },
-
-        {
-            pergunta: "Qual destas opções é um apelido tradicional associado à seleção espanhola?",
-            alternativas: [
-                "La Albiceleste",
-                "Les Bleus",
-                "La Roja",
-                "Azzurri"
-            ],
-            correta: 2,
-            referencia: true
-        }
-
+    referencias: [
+      "🧉 Referência: memes sobre o mate estar presente em praticamente qualquer situação.",
+      "⚽ Referência: memes sobre a paixão uruguaia pelo futebol."
     ],
 
+    curiosidades: [
+      "🌱 Os campos ocupam grande parte da paisagem natural uruguaia.",
+      "🧉 O mate possui grande importância cultural.",
+      "🏆 O Uruguai venceu a primeira Copa do Mundo, em 1930."
+    ]
+  },
 
-    especial: {
 
-        pergunta: "Qual alternativa reúne corretamente características naturais encontradas na Espanha?",
-        alternativas: [
-            "Clima mediterrâneo, áreas montanhosas e influência do Oceano Atlântico e do Mar Mediterrâneo",
-            "Clima equatorial, floresta amazônica e geleiras tropicais",
-            "Clima polar, tundra em todo o território e ausência de montanhas",
-            "Clima desértico em todo o país e ausência de influência marítima"
-        ],
-        correta: 0
+  // =========================================================
+  // 🇺🇸 ESTADOS UNIDOS
+  // =========================================================
 
-    }
+  estadosUnidos: {
+    nome: "Estados Unidos",
+    bandeira: "🇺🇸",
 
-},
-franca: {
+    perguntas: [
 
-    facil: [
-
-        {
-            pergunta: "Qual é a capital da França?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Paris",
-                "Lyon",
-                "Marselha",
-                "Nice"
-            ],
-            correta: 0
+      // 🟢 FÁCIL
+      {
+        dificuldade: "facil",
+        categoria: "Fauna",
+        pergunta: "Qual animal é um símbolo nacional dos Estados Unidos?",
+        alternativas: {
+          A: "Panda",
+          B: "Canguru",
+          C: "Onça-pintada",
+          D: "Águia-careca"
         },
+        resposta: "D",
+        pontos: 10
+      },
 
-        {
-            pergunta: "Qual tipo de clima é comum em grande parte do oeste da França?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Clima oceânico",
-                "Clima equatorial",
-                "Clima polar",
-                "Clima desértico"
-            ],
-            correta: 0
+      {
+        dificuldade: "facil",
+        categoria: "Clima",
+        pergunta: "Os Estados Unidos possuem vários tipos de clima?",
+        alternativas: {
+          A: "Sim",
+          B: "Não, apenas tropical",
+          C: "Não, apenas polar",
+          D: "Não, apenas desértico"
         },
+        resposta: "B",
+        pontos: 10
+      },
 
-        {
-            pergunta: "Qual destes animais pode ser encontrado em áreas naturais da França?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Javali",
-                "Canguru",
-                "Onça-pintada",
-                "Panda-gigante"
-            ],
-            correta: 0
-        }
+      {
+        dificuldade: "facil",
+        categoria: "Vegetação",
+        pergunta: "Qual destas paisagens pode ser encontrada nos Estados Unidos?",
+        alternativas: {
+          A: "Apenas tundra",
+          B: "Apenas desertos",
+          C: "Florestas",
+          D: "Apenas florestas tropicais"
+        },
+        resposta: "A",
+        pontos: 10
+      },
 
+      // 🟡 MÉDIO
+      {
+        dificuldade: "medio",
+        categoria: "Bioma",
+        pergunta: "Qual ambiente aparece no sudoeste dos Estados Unidos?",
+        alternativas: {
+          A: "Floresta amazônica",
+          B: "Tundra tropical",
+          C: "Manguezal equatorial",
+          D: "Desertos"
+        },
+        resposta: "C",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Fauna",
+        pergunta: "Qual animal é nativo de partes da América do Norte?",
+        alternativas: {
+          A: "Bisão-americano",
+          B: "Girafa",
+          C: "Elefante africano",
+          D: "Canguru"
+        },
+        resposta: "A",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Clima",
+        pergunta: "Por possuir um território enorme, os Estados Unidos apresentam:",
+        alternativas: {
+          A: "Apenas clima tropical",
+          B: "Grande variedade climática",
+          C: "Apenas clima polar",
+          D: "Apenas clima mediterrâneo"
+        },
+        resposta: "D",
+        pontos: 20
+      },
+
+      // 🔴 DIFÍCIL
+      {
+        dificuldade: "dificil",
+        categoria: "Bioma",
+        pergunta: "As sequoias gigantes encontradas na Califórnia fazem parte de quais ambientes?",
+        alternativas: {
+          A: "Caatinga",
+          B: "Florestas temperadas",
+          C: "Cerrado",
+          D: "Savana africana"
+        },
+        resposta: "B",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Clima",
+        pergunta: "Qual fenômeno pode produzir fortes tempestades e tornados em partes dos Estados Unidos?",
+        alternativas: {
+          A: "Monções asiáticas",
+          B: "Furacões no Ártico",
+          C: "Sistemas de tempestades severas",
+          D: "Nevascas tropicais"
+        },
+        resposta: "C",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Sociedade",
+        pergunta: "Qual grupo possui culturas tradicionais ligadas a diversas regiões dos Estados Unidos?",
+        alternativas: {
+          A: "Vikings",
+          B: "Faraós",
+          C: "Samurais",
+          D: "Povos indígenas norte-americanos"
+        },
+        resposta: "A",
+        pontos: 30
+      },
+
+      // ⭐ ESPECIAL
+      {
+        dificuldade: "especial",
+        categoria: "Natureza",
+        pergunta: "Por que os Estados Unidos possuem tanta diversidade natural?",
+        alternativas: {
+          A: "Porque possuem grande extensão territorial e diferentes relevos e climas",
+          B: "Porque possuem somente clima tropical",
+          C: "Porque todo o país é coberto por florestas",
+          D: "Porque não existem desertos"
+        },
+        resposta: "B",
+        pontos: 50
+      }
     ],
 
+    referencias: [
+      "🦅 Referência: memes relacionados a 'freedom' e à águia americana.",
+      "🍔 Referência: memes sobre hambúrguer e cultura americana."
+    ],
 
-    medio: [
+    curiosidades: [
+      "🦅 A águia-careca é um símbolo nacional dos Estados Unidos.",
+      "🏜️ O país possui grandes áreas desérticas.",
+      "🌎 O território apresenta uma enorme variedade de paisagens."
+    ]
+  },
 
-        {
-            pergunta: "Qual característica é comum na vegetação das regiões mediterrâneas do sul da França?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "Plantas adaptadas a verões quentes e relativamente secos",
-                "Vegetação adaptada ao gelo permanente",
-                "Florestas tropicais muito úmidas",
-                "Vegetação exclusiva de tundra"
-            ],
-            correta: 0
+
+  // =========================================================
+  // 🇪🇸 ESPANHA
+  // =========================================================
+
+  espanha: {
+    nome: "Espanha",
+    bandeira: "🇪🇸",
+
+    perguntas: [
+
+      // 🟢 FÁCIL
+      {
+        dificuldade: "facil",
+        categoria: "Vegetação",
+        pergunta: "Qual tipo de vegetação aparece em várias áreas da Espanha?",
+        alternativas: {
+          A: "Floresta amazônica",
+          B: "Vegetação mediterrânea",
+          C: "Tundra",
+          D: "Taiga siberiana"
         },
+        resposta: "B",
+        pontos: 10
+      },
 
-        {
-            pergunta: "Qual grande cadeia montanhosa está localizada principalmente no sudeste da França?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Alpes",
-                "Andes",
-                "Himalaia",
-                "Montanhas Rochosas"
-            ],
-            correta: 0
+      {
+        dificuldade: "facil",
+        categoria: "Fauna",
+        pergunta: "Qual animal é encontrado na fauna espanhola?",
+        alternativas: {
+          A: "Canguru",
+          B: "Panda-gigante",
+          C: "Lince-ibérico",
+          D: "Urso-polar"
         },
+        resposta: "D",
+        pontos: 10
+      },
 
-        {
-            pergunta: "Qual destas alternativas apresenta um prato associado à culinária francesa?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Ratatouille",
-                "Sushi",
+      {
+        dificuldade: "facil",
+        categoria: "Clima",
+        pergunta: "Qual clima é muito característico de várias regiões da Espanha?",
+        alternativas: {
+          A: "Mediterrâneo",
+          B: "Equatorial",
+          C: "Polar",
+          D: "Tropical amazônico"
+        },
+        resposta: "C",
+        pontos: 10
+      },
+
+      // 🟡 MÉDIO
+      {
+        dificuldade: "medio",
+        categoria: "Bioma",
+        pergunta: "A vegetação mediterrânea é adaptada principalmente a:",
+        alternativas: {
+          A: "Gelo permanente",
+          B: "Chuvas constantes",
+          C: "Temperaturas polares",
+          D: "Verões quentes e secos"
+        },
+        resposta: "A",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Fauna",
+        pergunta: "O lince-ibérico é associado principalmente a qual região?",
+        alternativas: {
+          A: "Austrália",
+          B: "Península Ibérica",
+          C: "Amazônia",
+          D: "Antártida"
+        },
+        resposta: "C",
+        pontos: 20
+      },
+
+      {
+        dificuldade: "medio",
+        categoria: "Vegetação",
+        pergunta: "Qual árvore é bastante associada às paisagens mediterrâneas da Espanha?",
+        alternativas: {
+          A: "Oliveira",
+          B: "Sequoia gigante",
+          C: "Palmeira amazônica",
+          D: "Pinheiro tropical"
+        },
+        resposta: "B",
+        pontos: 20
+      },
+
+      // 🔴 DIFÍCIL
+      {
+        dificuldade: "dificil",
+        categoria: "Clima",
+        pergunta: "Por que o clima espanhol apresenta diferenças entre suas regiões?",
+        alternativas: {
+          A: "Porque todo o país possui clima equatorial",
+          B: "Porque não existem montanhas",
+          C: "Por causa do relevo, altitude e influência do mar",
+          D: "Porque todo o país está no deserto"
+        },
+        resposta: "D",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Bioma",
+        pergunta: "Qual formação vegetal pode aparecer em regiões mais secas da Espanha?",
+        alternativas: {
+          A: "Vegetação mediterrânea adaptada à seca",
+          B: "Floresta amazônica",
+          C: "Tundra",
+          D: "Manguezal tropical"
+        },
+        resposta: "A",
+        pontos: 30
+      },
+
+      {
+        dificuldade: "dificil",
+        categoria: "Sociedade",
+        pergunta: "A Espanha possui diversidade cultural e linguística entre suas regiões?",
+        alternativas: {
+          A: "Não",
+          B: "Sim",
+          C: "Apenas nas ilhas",
+          D: "Apenas nas áreas rurais"
+        },
+        resposta: "B",
+        pontos: 30
+      },
+
+      // ⭐ ESPECIAL
+      {
+        dificuldade: "especial",
+        categoria: "Natureza",
+        pergunta: "Qual conjunto apresenta características naturais encontradas na Espanha?",
+        alternativas: {
+          A: "Floresta amazônica, clima equatorial e rios tropicais",
+          B: "Tundra, gelo permanente e clima polar",
+          C: "Savana africana e clima equatorial",
+          D: "Vegetação mediterrânea, montanhas e diferentes tipos de clima"
+        },
+        resposta: "A",
+        pontos: 50
+      }
+    ],
+
+    referencias: [
+      "🥘 Referência: memes sobre a paella quando alguém fala de comida espanhola.",
+      "💃 Referência: memes relacionados ao flamenco e à dança espanhola."
+    ],
+
+    curiosidades: [
+      "🏰 A Espanha possui muitos castelos e construções históricas.",
+      "🌿 A vegetação mediterrânea é importante em várias regiões.",
+      "🐈 O lince-ibérico é uma espécie emblemática da Península Ibérica."
+    ]
+  }
+};
+
+          
+          "Sushi",
                 "Tacos",
                 "Feijoada"
             ],
