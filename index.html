@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Passaporte da Jornada</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         🎮 JOGO
+    =================================================== -->
+
+    <main id="jogo">
+
+
+        <!-- ==================================================
+             🏠 TELA INICIAL
+        =================================================== -->
+
+        <section id="tela-inicial" class="tela ativa">
+
+
+            <div class="logo">
+
+                <span class="logo-planeta">
+                    🌎
+                </span>
+
+                <h1>
+                    Passaporte da Jornada
+                </h1>
+
+                <p>
+                    Os Biomas do Mundo
+                </p>
+
+            </div>
+
+
+            <div class="decoracao">
+
+                ✈️ ☁️ ☁️
+
+            </div>
+
+
+            <div class="menu">
+
+
+                <button id="btn-comecar">
+
+                    ✈️ Começar Jornada
+
+                </button>
+
+
+                <button id="btn-como-jogar">
+
+                    ❓ Como Jogar
+
+                </button>
+
+
+                <button id="btn-passaporte">
+
+                    🛂 Meu Passaporte
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             📖 COMO JOGAR
+        =================================================== -->
+
+        <section id="tela-como-jogar" class="tela">
+
+
+            <h2>
+                📖 Como Jogar
+            </h2>
+
+
+            <div class="instrucoes">
+
+
+                <p>
+                    🌎 Viaje por diferentes países.
+                </p>
+
+
+                <p>
+                    ❓ Responda perguntas sobre
+                    biomas, clima, vegetação e fauna.
+                </p>
+
+
+                <p>
+                    🛂 Conquiste um carimbo
+                    para cada destino.
+                </p>
+
+
+                <p>
+                    🔓 Complete um país para
+                    desbloquear o próximo.
+                </p>
+
+
+                <p>
+                    ❤️ Você possui vidas
+                    durante o desafio.
+                </p>
+
+
+                <p>
+                    ⭐ A pergunta especial
+                    vale pontos extras.
+                </p>
+
+
+                <p>
+                    🎚️ A dificuldade escolhida
+                    permanece durante toda a jornada.
+                </p>
+
+
+            </div>
+
+
+            <button class="btn-voltar">
+
+                ← Voltar
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             🎚️ ESCOLHA DE DIFICULDADE
+        =================================================== -->
+
+        <section id="tela-dificuldade" class="tela">
+
+
+            <h2>
+                🎚️ Escolha sua dificuldade
+            </h2>
+
+
+            <p>
+                Sua escolha ficará definida
+                durante toda a jornada.
+            </p>
+
+
+            <div class="dificuldades">
+
+
+                <!-- FÁCIL -->
+
+                <button
+                    class="dificuldade"
+                    data-nivel="facil">
+
+                    <span>
+                        🟢
+                    </span>
+
+                    <strong>
+                        Fácil
+                    </strong>
+
+                    <small>
+                        Perguntas mais simples
+                    </small>
+
+                </button>
+
+
+
+                <!-- MÉDIO -->
+
+                <button
+                    class="dificuldade"
+                    data-nivel="medio">
+
+                    <span>
+                        🟡
+                    </span>
+
+                    <strong>
+                        Médio
+                    </strong>
+
+                    <small>
+                        Desafio equilibrado
+                    </small>
+
+                </button>
+
+
+
+                <!-- DIFÍCIL -->
+
+                <button
+                    class="dificuldade"
+                    data-nivel="dificil">
+
+                    <span>
+                        🔴
+                    </span>
+
+                    <strong>
+                        Difícil
+                    </strong>
+
+                    <small>
+                        Para quem quer um desafio maior
+                    </small>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             🛂 PASSAPORTE
+        =================================================== -->
+
+        <section id="tela-passaporte" class="tela">
+
+
+            <div class="passaporte-titulo">
+
+                <h2>
+                    🛂 Meu Passaporte
+                </h2>
+
+                <p>
+                    Toque em um carimbo para
+                    ver os detalhes da sua viagem.
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 📖 PASSAPORTE ABERTO
+            =================================================== -->
+
+            <div class="passaporte-aberto">
+
+
+                <!--
+
+                    FUTURA IMAGEM PIXEL ART
+
+                    Depois vamos colocar aqui
+                    a imagem do passaporte aberto.
+
+                -->
+
+                <img
+                    id="imagem-passaporte"
+                    src="imagens/passaporte-aberto.png"
+                    alt="Passaporte aberto">
+
+
+                <!-- ==================================================
+                     🛂 CARIMBOS
+                =================================================== -->
+
+                <div id="carimbos-passaporte">
+
+
+                    <!-- 🇧🇷 BRASIL -->
+
+                    <button
+                        class="carimbo-pais disponivel"
+                        data-pais="brasil">
+
+                        <span>
+                            🇧🇷
+                        </span>
+
+                        <small>
+                            Brasil
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇦🇷 ARGENTINA -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="argentina"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Argentina
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇺🇾 URUGUAI -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="uruguai"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Uruguai
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇺🇸 ESTADOS UNIDOS -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="estados-unidos"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Estados Unidos
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇪🇸 ESPANHA -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="espanha"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Espanha
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇫🇷 FRANÇA -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="franca"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            França
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇩🇪 ALEMANHA -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="alemanha"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Alemanha
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇮🇹 ITÁLIA -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="italia"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Itália
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇬🇧 REINO UNIDO -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="reino-unido"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Reino Unido
+                        </small>
+
+                    </button>
+
+
+
+                    <!-- 🇮🇸 ISLÂNDIA -->
+
+                    <button
+                        class="carimbo-pais bloqueado"
+                        data-pais="islandia"
+                        disabled>
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <small>
+                            Islândia
+                        </small>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 📋 INFORMAÇÕES DO PAÍS
+            =================================================== -->
+
+            <div
+                id="informacoes-carimbo"
+                class="informacoes-carimbo escondido">
+
+
+                <button
+                    id="fechar-informacoes"
+                    class="fechar-informacoes">
+
+                    ✕
+
+                </button>
+
+
+                <span id="info-bandeira">
+
+                    🇧🇷
+
+                </span>
+
+
+                <h3 id="info-pais">
+
+                    Brasil
+
+                </h3>
+
+
+                <div class="info-status">
+
+                    <strong id="info-status">
+
+                        🔒 Bloqueado
+
+                    </strong>
+
+                </div>
+
+
+
+                <div class="info-dados">
+
+
+                    <p>
+
+                        🎚️ Dificuldade:
+
+                        <strong id="info-dificuldade">
+
+                            -
+
+                        </strong>
+
+                    </p>
+
+
+
+                    <p>
+
+                        ❓ Perguntas acertadas:
+
+                        <strong id="info-acertos">
+
+                            0/3
+
+                        </strong>
+
+                    </p>
+
+
+
+                    <p>
+
+                        ❌ Erros:
+
+                        <strong id="info-erros">
+
+                            0
+
+                        </strong>
+
+                    </p>
+
+
+
+                    <p>
+
+                        ⭐ Especial:
+
+                        <strong id="info-especial">
+
+                            Não realizada
+
+                        </strong>
+
+                    </p>
+
+
+
+                    <p>
+
+                        🏆 Pontuação:
+
+                        <strong id="info-pontuacao">
+
+                            0
+
+                        </strong>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div
+                    id="info-curiosidade"
+                    class="info-curiosidade">
+
+                    🌿
+                    Complete este destino
+                    para descobrir suas informações.
+
+                </div>
+
+
+            </div>
+
+
+
+            <button class="btn-voltar">
+
+                ← Fechar Passaporte
+
+            </button>
+
+
+        </section>
+
+        <!-- ==================================================
+             🏆 MÉRITOS E CONQUISTAS
+        =================================================== -->
+
+        <div class="meritos">
+
+            <h3>
+                🏆 Méritos & Conquistas
+            </h3>
+
+            <p>
+                Complete desafios e registre
+                suas conquistas na jornada.
+            </p>
+
+            <div id="lista-conquistas">
+
+                <!-- O JavaScript vai colocar
+                     as conquistas aqui -->
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             🗺️ MAPA
+        =================================================== -->
+
+        <section id="tela-mapa" class="tela">
+
+        <!-- ==================================================
+             🗺️ MAPA
+        =================================================== -->
+
+        <section id="tela-mapa" class="tela">
+
+
+            <header class="cabecalho">
+
+
+                <h2>
+                    🗺️ Jornada Mundial
+                </h2>
+
+
+                <button id="btn-abrir-passaporte">
+
+                    🛂
+
+                </button>
+
+
+            </header>
+
+
+
+            <div class="mapa">
+
+
+                <!-- 🇧🇷 BRASIL -->
+
+                <button
+                    class="destino disponivel"
+                    data-pais="brasil">
+
+                    <span>
+                        🇧🇷
+                    </span>
+
+                    <strong>
+                        Brasil
+                    </strong>
+
+                    <small>
+                        ▶ Visitar
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇦🇷 ARGENTINA -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="argentina"
+                    disabled>
+
+                    <span>
+                        🇦🇷
+                    </span>
+
+                    <strong>
+                        Argentina
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇺🇾 URUGUAI -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="uruguai"
+                    disabled>
+
+                    <span>
+                        🇺🇾
+                    </span>
+
+                    <strong>
+                        Uruguai
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇺🇸 ESTADOS UNIDOS -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="estados-unidos"
+                    disabled>
+
+                    <span>
+                        🇺🇸
+                    </span>
+
+                    <strong>
+                        Estados Unidos
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇪🇸 ESPANHA -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="espanha"
+                    disabled>
+
+                    <span>
+                        🇪🇸
+                    </span>
+
+                    <strong>
+                        Espanha
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇫🇷 FRANÇA -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="franca"
+                    disabled>
+
+                    <span>
+                        🇫🇷
+                    </span>
+
+                    <strong>
+                        França
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇩🇪 ALEMANHA -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="alemanha"
+                    disabled>
+
+                    <span>
+                        🇩🇪
+                    </span>
+
+                    <strong>
+                        Alemanha
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇮🇹 ITÁLIA -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="italia"
+                    disabled>
+
+                    <span>
+                        🇮🇹
+                    </span>
+
+                    <strong>
+                        Itália
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇬🇧 REINO UNIDO -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="reino-unido"
+                    disabled>
+
+                    <span>
+                        🇬🇧
+                    </span>
+
+                    <strong>
+                        Reino Unido
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+
+                <!-- 🇮🇸 ISLÂNDIA -->
+
+                <button
+                    class="destino bloqueado"
+                    data-pais="islandia"
+                    disabled>
+
+                    <span>
+                        🇮🇸
+                    </span>
+
+                    <strong>
+                        Islândia
+                    </strong>
+
+                    <small>
+                        🔒 Bloqueado
+                    </small>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             🌎 INTRODUÇÃO DO PAÍS
+        =================================================== -->
+
+        <section id="tela-pais" class="tela">
+
+
+            <div class="pais-cabecalho">
+
+
+                <span id="pais-bandeira">
+                    🇧🇷
+                </span>
+
+
+                <h2 id="pais-nome">
+                    Brasil
+                </h2>
+
+
+                <p id="pais-regiao">
+                    América do Sul
+                </p>
+
+
+            </div>
+
+
+
+            <div class="informacoes-pais">
+
+
+                <div>
+
+                    <span>
+                        🌳
+                    </span>
+
+                    <strong>
+                        Biomas
+                    </strong>
+
+                    <p id="pais-biomas">
+                        Conheça os biomas
+                        deste país.
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        🌡️
+                    </span>
+
+                    <strong>
+                        Clima
+                    </strong>
+
+                    <p id="pais-clima">
+                        Descubra seus
+                        diferentes climas.
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        🌱
+                    </span>
+
+                    <strong>
+                        Vegetação
+                    </strong>
+
+                    <p id="pais-vegetacao">
+                        Conheça sua
+                        vegetação.
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        🐾
+                    </span>
+
+                    <strong>
+                        Fauna
+                    </strong>
+
+                    <p id="pais-fauna">
+                                    Descubra seus
+                        animais.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button id="btn-iniciar-desafio">
+
+                🎯 Iniciar Desafio
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ❓ PERGUNTAS
+        =================================================== -->
+
+        <section id="tela-pergunta" class="tela">
+
+
+            <header class="quiz-cabecalho">
+
+
+                <div>
+
+                    <span id="quiz-bandeira">
+                        🇧🇷
+                    </span>
+
+                    <span id="quiz-pais">
+                        Brasil
+                    </span>
+
+                </div>
+
+
+                <div class="quiz-info">
+
+                    <span id="quiz-dificuldade">
+                        🟡 Médio
+                    </span>
+
+                    <span id="pergunta-numero">
+                        1/4
+                    </span>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- STATUS DO JOGADOR -->
+
+            <div class="status-jogador">
+
+
+                <div id="vidas">
+
+                    ❤️ ❤️ ❤️
+
+                </div>
+
+
+                <div>
+
+                    ⭐
+
+                    <span id="pontuacao">
+                        0
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TIPO DA PERGUNTA -->
+
+            <div id="tipo-pergunta">
+
+                🟡 PERGUNTA MÉDIA
+
+            </div>
+
+
+
+            <!-- PERGUNTA ESPECIAL -->
+
+            <div
+                id="bonus-especial"
+                class="escondido">
+
+                ⭐ PERGUNTA ESPECIAL
+                <br>
+                Vale pontos extras!
+
+            </div>
+
+
+
+            <!-- PERGUNTA -->
+
+            <div class="pergunta">
+
+
+                <span id="icone-pergunta">
+
+                    🌳
+
+                </span>
+
+
+                <h2 id="texto-pergunta">
+
+                    Pergunta aparecerá aqui.
+
+                </h2>
+
+
+            </div>
+
+
+
+            <!-- ALTERNATIVAS -->
+
+            <div id="alternativas">
+
+
+                <button class="alternativa">
+
+                    Alternativa A
+
+                </button>
+
+
+                <button class="alternativa">
+
+                    Alternativa B
+
+                </button>
+
+
+                <button class="alternativa">
+
+                    Alternativa C
+
+                </button>
+
+
+                <button class="alternativa">
+
+                    Alternativa D
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- RESULTADO DA RESPOSTA -->
+
+            <div
+                id="resultado-resposta"
+                class="resultado escondido">
+
+
+                <h3 id="resultado-titulo">
+
+                    ✅ Correto!
+
+                </h3>
+
+
+                <p id="resultado-texto">
+
+                    Muito bem!
+
+                </p>
+
+
+                <div id="curiosidade">
+
+                    💡 Curiosidade
+
+                </div>
+
+
+                <button id="btn-proxima-pergunta">
+
+                    Próxima pergunta →
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             🎉 RESULTADO DO PAÍS
+        =================================================== -->
+
+        <section
+            id="tela-resultado-pais"
+            class="tela">
+
+
+            <span id="resultado-bandeira">
+
+                🇧🇷
+
+            </span>
+
+
+            <h2>
+
+                🎉 Destino concluído!
+
+            </h2>
+
+
+            <h3 id="resultado-pais-nome">
+
+                Brasil
+
+            </h3>
+
+
+
+            <div class="estatisticas">
+
+
+                <p>
+
+                    ⭐ Pontuação:
+
+                    <strong id="resultado-pontuacao">
+
+                        0
+
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    ✅ Perguntas acertadas:
+
+                    <strong id="resultado-acertos">
+
+                        0/3
+
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    ⭐ Especial:
+
+                    <strong id="resultado-especial">
+
+                        Não realizada
+
+                    </strong>
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- CARIMBO CONQUISTADO -->
+
+            <div
+                id="carimbo-novo"
+                class="carimbo">
+
+
+                🛂
+
+
+                <strong>
+                    🇧🇷 BRASIL
+                </strong>
+
+
+                <small>
+                    DESTINO CONCLUÍDO
+                </small>
+
+
+            </div>
+
+
+
+            <button id="btn-continuar-jornada">
+
+                ✈️ Continuar Jornada
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             🚨 DERROTA
+        =================================================== -->
+
+        <section id="tela-derrota" class="tela">
+
+
+            <span>
+
+                🚨
+
+            </span>
+
+
+            <h2>
+
+                Jornada interrompida!
+
+            </h2>
+
+
+            <p>
+
+                Você perdeu todas as suas vidas.
+
+            </p>
+
+
+            <p>
+
+                Tente novamente este destino!
+
+            </p>
+
+
+
+            <button id="btn-tentar-novamente">
+
+                🔄 Tentar novamente
+
+            </button>
+
+
+
+            <button id="btn-voltar-mapa">
+
+                🗺️ Voltar ao mapa
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             🌎 VITÓRIA FINAL
+        =================================================== -->
+
+        <section id="tela-final" class="tela">
+
+
+            <div class="vitoria">
+
+
+                <span>
+
+                    🌎
+
+                </span>
+
+
+                <h1>
+
+                    PARABÉNS!
+
+                </h1>
+
+
+                <h2>
+
+                    Explorador Mundial
+
+                </h2>
+
+
+                <p>
+
+                    Você completou toda a jornada!
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- RESULTADO FINAL -->
+
+            <div class="resultado-final">
+
+
+                <p>
+
+                    🌎 Países visitados:
+
+                    <strong>
+
+                        10/10
+
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    ❓ Perguntas respondidas:
+
+                    <strong id="total-perguntas">
+
+                        40
+
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    ⭐ Pontuação final:
+
+                    <strong id="pontuacao-final">
+
+                        0
+
+                    </strong>
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- PASSAPORTE FINAL -->
+
+            <div class="passaporte-final">
+
+
+                <h3>
+
+                    🛂 Seu Passaporte
+
+                </h3>
+
+
+                <div id="carimbos-finais">
+
+                    <!-- Os carimbos serão colocados
+                         pelo JavaScript -->
+
+                </div>
+
+
+            </div>
+
+
+
+            <button id="btn-jogar-novamente">
+
+                🔄 Nova Jornada
+
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         🧠 JAVASCRIPT
+    =================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
