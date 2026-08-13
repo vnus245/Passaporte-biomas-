@@ -1903,4 +1903,65 @@ const conquistas = [
     }
 
 ];
+/* =========================
+   🧩 SESSÃO 5
+   MOSTRAR CONQUISTAS
+========================= */
+
+function mostrarConquistas() {
+
+    const lista = document.getElementById("lista-conquistas");
+
+    if (!lista) return;
+
+    lista.innerHTML = "";
+
+    conquistas.forEach(conquista => {
+
+        const item = document.createElement("div");
+
+        item.className = "conquista";
+
+        if (!conquista.desbloqueada) {
+            item.classList.add("bloqueada");
+        }
+
+        const nome = conquista.secreta &&
+                     !conquista.desbloqueada
+                     ? "???"
+                     : conquista.nome;
+
+        const descricao = conquista.secreta &&
+                          !conquista.desbloqueada
+                          ? "Conquista secreta"
+                          : conquista.descricao;
+
+        item.innerHTML = `
+
+            <div class="conquista-icone">
+                ${conquista.desbloqueada
+                    ? conquista.icone
+                    : "🔒"}
+            </div>
+
+            <div class="conquista-info">
+
+                <strong>
+                    ${nome}
+                </strong>
+
+                <small>
+                    ${descricao}
+                </small>
+
+            </div>
+
+        `;
+
+        lista.appendChild(item);
+
+    });
+
+}
+
 
