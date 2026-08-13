@@ -1,4 +1,4 @@
-/* =========================
+i9/* =========================
    🧩 SESSÃO 1
    CONFIGURAÇÃO
 ========================= */
@@ -2206,5 +2206,336 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarTela("inicio");
 
 });
+     /* =========================
+   🧩 SESSÃO 7
+   🗺️ MAPA-MÚNDI
+========================= */
+
+
+// =========================================================
+// 🌍 PAÍSES DO MAPA
+// =========================================================
+
+const mapaPaises = [
+
+    {
+        id: "brasil",
+        nome: "Brasil",
+        bandeira: "🇧🇷",
+        desbloqueado: true,
+        visitado: false,
+        completado: false,
+        x: 36,
+        y: 58
+    },
+
+    {
+        id: "argentina",
+        nome: "Argentina",
+        bandeira: "🇦🇷",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 34,
+        y: 70
+    },
+
+    {
+        id: "uruguai",
+        nome: "Uruguai",
+        bandeira: "🇺🇾",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 38,
+        y: 73
+    },
+
+    {
+        id: "eua",
+        nome: "Estados Unidos",
+        bandeira: "🇺🇸",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 22,
+        y: 38
+    },
+
+    {
+        id: "espanha",
+        nome: "Espanha",
+        bandeira: "🇪🇸",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 48,
+        y: 34
+    },
+
+    {
+        id: "franca",
+        nome: "França",
+        bandeira: "🇫🇷",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 49,
+        y: 31
+    },
+
+    {
+        id: "alemanha",
+        nome: "Alemanha",
+        bandeira: "🇩🇪",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 52,
+        y: 29
+    },
+
+    {
+        id: "italia",
+        nome: "Itália",
+        bandeira: "🇮🇹",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 52,
+        y: 35
+    },
+
+    {
+        id: "reino-unido",
+        nome: "Reino Unido",
+        bandeira: "🇬🇧",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 47,
+        y: 25
+    },
+
+    {
+        id: "islandia",
+        nome: "Islândia",
+        bandeira: "🇮🇸",
+        desbloqueado: false,
+        visitado: false,
+        completado: false,
+        x: 45,
+        y: 16
+    }
+
+];
+
+
+// =========================================================
+// 🗺️ ELEMENTO DO MAPA
+// =========================================================
+
+function mostrarMapa() {
+
+    const mapa = document.getElementById("mapa-mundi");
+
+    if (!mapa) return;
+
+    mapa.innerHTML = "";
+
+
+    mapaPaises.forEach(pais => {
+
+        const marcador = document.createElement("button");
+
+        marcador.className = "marcador-pais";
+
+
+        // 📍 POSIÇÃO DO PAÍS
+
+        marcador.style.left = pais.x + "%";
+        marcador.style.top = pais.y + "%";
+
+
+        // 🔒 PAÍS BLOQUEADO
+
+        if (!pais.desbloqueado) {
+
+            marcador.classList.add("bloqueado");
+
+            marcador.innerHTML = "🔒";
+
+            marcador.title = "Destino bloqueado";
+
+        }
+
+
+        // 🌍 PAÍS DESBLOQUEADO
+
+        else {
+
+            marcador.innerHTML = pais.bandeira;
+
+            marcador.title = pais.nome;
+
+
+            marcador.onclick = () => {
+
+                selecionarPaisMapa(pais.id);
+
+            };
+
+        }
+
+
+        // 🏁 PAÍS COMPLETADO
+
+        if (pais.completado) {
+
+            marcador.classList.add("completado");
+
+        }
+
+
+        mapa.appendChild(marcador);
+
+    });
+
+}
+
+
+// =========================================================
+// 🌎 SELECIONAR PAÍS
+// =========================================================
+
+function selecionarPaisMapa(idPais) {
+
+    const pais = mapaPaises.find(
+        pais => pais.id === idPais
+    );
+
+
+    if (!pais) return;
+
+
+    if (!pais.desbloqueado) {
+
+        return;
+
+    }
+
+
+    pais.visitado = true;
+
+
+    // Guarda o país selecionado
+
+    window.paisSelecionado = idPais;
+
+
+    // Abre a tela do país
+
+    abrirPais();
+
+}
+
+
+// =========================================================
+// 🔓 DESBLOQUEAR PAÍS
+// =========================================================
+
+function desbloquearPais(idPais) {
+
+    const pais = mapaPaises.find(
+        pais => pais.id === idPais
+    );
+
+
+    if (!pais) return;
+
+
+    pais.desbloqueado = true;
+
+
+    mostrarMapa();
+
+}
+
+
+// =========================================================
+// 🏁 COMPLETAR PAÍS
+// =========================================================
+
+function completarPaisMapa(idPais) {
+
+    const pais = mapaPaises.find(
+        pais => pais.id === idPais
+    );
+
+
+    if (!pais) return;
+
+
+    pais.completado = true;
+
+    pais.visitado = true;
+
+
+    mostrarMapa();
+
+}
+
+
+// =========================================================
+// 📊 PROGRESSO DO MAPA
+// =========================================================
+
+function progressoMapa() {
+
+    const total = mapaPaises.length;
+
+
+    const completados = mapaPaises.filter(
+        pais => pais.completado
+    ).length;
+
+
+    return {
+
+        total: total,
+
+        completados: completados,
+
+        porcentagem:
+            Math.round((completados / total) * 100)
+
+    };
+
+}
+
+
+// =========================================================
+// 🧭 ATUALIZAR MAPA
+// =========================================================
+
+function atualizarMapa() {
+
+    mostrarMapa();
+
+}
+
+
+// =========================================================
+// 🚀 INICIALIZAÇÃO
+// =========================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        mostrarMapa();
+
+    }
+);
      
             
