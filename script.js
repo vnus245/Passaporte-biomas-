@@ -119,8 +119,8 @@ const paises = [
           C: "Pantanal",
           D: "Pampa"
         },
-        resposta: "A",
-        pontos: 10
+        resposta: "A"
+   
       },
 
       {
@@ -133,8 +133,8 @@ const paises = [
           C: "Trigo",
           D: "Tâmara"
         },
-        resposta: "B",
-        pontos: 10
+        resposta: "B"
+      
       },
 
       {
@@ -147,8 +147,8 @@ const paises = [
           C: "Onça-pintada",
           D: "Panda"
         },
-        resposta: "C",
-        pontos: 10
+        resposta: "C"
+        
       },
 
       // 🟡 MÉDIO
@@ -162,8 +162,8 @@ const paises = [
           C: "Mediterrâneo",
           D: "Desértico"
         },
-        resposta: "B",
-        pontos: 20
+        resposta: "B"
+         
       },
 
       {
@@ -176,8 +176,8 @@ const paises = [
           C: "Pantanal",
           D: "Mata Atlântica"
         },
-        resposta: "C",
-        pontos: 20
+        resposta: "C"
+        
       },
 
       {
@@ -190,8 +190,8 @@ const paises = [
           C: "Rena",
           D: "Foca"
         },
-        resposta: "D",
-        pontos: 20
+        resposta: "D"
+        
       },
 
       // 🔴 DIFÍCIL
@@ -205,8 +205,8 @@ const paises = [
           C: "Apenas plantas aquáticas",
           D: "Vegetação exclusivamente de coníferas"
         },
-        resposta: "A",
-        pontos: 30
+        resposta: "A"
+        
       },
 
       {
@@ -219,8 +219,8 @@ const paises = [
           C: "Paella",
           D: "Croissant"
         },
-        resposta: "B",
-        pontos: 30
+        resposta: "B"
+        
       },
 
       {
@@ -233,8 +233,8 @@ const paises = [
           C: "Samurais",
           D: "Faraós"
         },
-        resposta: "D",
-        pontos: 30
+        resposta: "D"
+        
       },
 
       // ⭐ ESPECIAL
@@ -248,8 +248,8 @@ const paises = [
           C: "Taiga, Tundra e Pampa",
           D: "Savana africana, Taiga e Cerrado"
         },
-        resposta: "A",
-        pontos: 50
+        resposta: "A"
+        
       }
     ],
 
@@ -287,8 +287,8 @@ const paises = [
           C: "Panda",
           D: "Girafa"
         },
-        resposta: "B",
-        pontos: 10
+        resposta: "B"
+        
       },
 
       {
@@ -301,8 +301,8 @@ const paises = [
           C: "Manguezal",
           D: "Pampas"
         },
-        resposta: "C",
-        pontos: 10
+        resposta: "C"
+        
       },
 
       {
@@ -315,8 +315,8 @@ const paises = [
           C: "Caribe",
           D: "Saara"
         },
-        resposta: "A",
-        pontos: 10
+        resposta: "A"
+        
       },
 
       // 🟡 MÉDIO
@@ -330,8 +330,8 @@ const paises = [
           C: "Desertos de gelo",
           D: "Manguezais"
         },
-        resposta: "D",
-        pontos: 20
+        resposta: "D"
+        
       },
 
       {
@@ -344,8 +344,8 @@ const paises = [
           C: "Pinguim-imperador",
           D: "Tucano amazônico"
         },
-        resposta: "A",
-        pontos: 20
+        resposta: "A"
+      
       },
 
       {
@@ -358,8 +358,8 @@ const paises = [
           C: "Frias e secas em várias áreas",
           D: "Desérticas tropicais"
         },
-        resposta: "B",
-        pontos: 20
+        resposta: "B"
+        
       },
 
       // 🔴 DIFÍCIL
@@ -373,8 +373,8 @@ const paises = [
           C: "Tundra tropical",
           D: "Ambientes áridos e semiáridos"
         },
-        resposta: "C",
-        pontos: 30
+        resposta: "C"
+        
       },
 
       {
@@ -387,8 +387,8 @@ const paises = [
           C: "Oceania",
           D: "Deserto africano"
         },
-        resposta: "D",
-        pontos: 30
+        resposta: "D"
+        
       },
 
       {
@@ -401,8 +401,8 @@ const paises = [
           C: "Navegação viking",
           D: "Cultivo de arroz tropical"
         },
-        resposta: "A",
-        pontos: 30
+        resposta: "A"
+        
       },
 
       // ⭐ ESPECIAL
@@ -416,8 +416,8 @@ const paises = [
           C: "Saara, Savana e Taiga",
           D: "Tundra, Amazônia e Cerrado"
         },
-        resposta: "B",
-        pontos: 50
+        resposta: "B"
+        
       }
     ],
 
@@ -455,8 +455,8 @@ const paises = [
           C: "Capivara",
           D: "Urso-polar"
         },
-        resposta: "C",
-        pontos: 10
+        resposta: "C"
+        
       },
 
       {
@@ -469,8 +469,8 @@ const paises = [
           C: "Tundra",
           D: "Taiga"
         },
-        resposta: "A",
-        pontos: 10
+        resposta: "A"
+        
       },
 
       {
@@ -483,8 +483,8 @@ const paises = [
           C: "Equatorial",
           D: "Temperado"
         },
-        resposta: "B",
-        pontos: 10
+        resposta: "B"
+        
       },
 
       // 🟡 MÉDIO
@@ -498,8 +498,8 @@ const paises = [
           C: "Florestas equatoriais",
           D: "Tundra"
         },
-        resposta: "A",
-        pontos: 20
+        resposta: "A"
+        
       },
 
       {
@@ -512,8 +512,8 @@ const paises = [
           C: "Capivara",
           D: "Camelo"
         },
-        resposta: "D",
-        pontos: 20
+        resposta: "D"
+        
       },
 
       {
@@ -526,8 +526,8 @@ const paises = [
           C: "Não, só existe inverno",
           D: "Não existem estações"
         },
-        resposta: "C",
-        pontos: 20
+        resposta: "C"
+        
       },
 
       // 🔴 DIFÍCIL
@@ -541,8 +541,8 @@ const paises = [
           C: "Cultivo de plantas tropicais",
           D: "Pecuária"
         },
-        resposta: "B",
-        pontos: 30
+        resposta: "B"
+        
       },
 
       {
@@ -555,8 +555,8 @@ const paises = [
           C: "Tundra",
           D: "Desertos tropicais"
         },
-        resposta: "A",
-        pontos: 30
+        resposta: "A"
+        
       },
 
       {
@@ -569,8 +569,8 @@ const paises = [
           C: "Mate",
           D: "Chá de gelo"
         },
-        resposta: "D",
-        pontos: 30
+        resposta: "D"
+        
       },
 
       // ⭐ ESPECIAL
@@ -584,8 +584,8 @@ const paises = [
           C: "Campos, clima temperado e fauna de áreas abertas",
           D: "Tundra, gelo permanente e renas"
         },
-        resposta: "C",
-        pontos: 50
+        resposta: "C"
+        
       }
     ],
 
@@ -623,8 +623,8 @@ const paises = [
           C: "Onça-pintada",
           D: "Águia-careca"
         },
-        resposta: "D",
-        pontos: 10
+        resposta: "D"
+        
       },
 
       {
@@ -637,8 +637,8 @@ const paises = [
           C: "Não, apenas polar",
           D: "Não, apenas desértico"
         },
-        resposta: "B",
-        pontos: 10
+        resposta: "B"
+        
       },
 
       {
@@ -651,8 +651,8 @@ const paises = [
           C: "Florestas",
           D: "Apenas florestas tropicais"
         },
-        resposta: "A",
-        pontos: 10
+        resposta: "A"
+        
       },
 
       // 🟡 MÉDIO
@@ -666,8 +666,8 @@ const paises = [
           C: "Manguezal equatorial",
           D: "Desertos"
         },
-        resposta: "C",
-        pontos: 20
+        resposta: "C"
+        
       },
 
       {
@@ -680,8 +680,8 @@ const paises = [
           C: "Elefante africano",
           D: "Canguru"
         },
-        resposta: "A",
-        pontos: 20
+        resposta: "A"
+        
       },
 
       {
@@ -694,8 +694,8 @@ const paises = [
           C: "Apenas clima polar",
           D: "Apenas clima mediterrâneo"
         },
-        resposta: "D",
-        pontos: 20
+        resposta: "D"
+      
       },
 
       // 🔴 DIFÍCIL
@@ -709,8 +709,8 @@ const paises = [
           C: "Cerrado",
           D: "Savana africana"
         },
-        resposta: "B",
-        pontos: 30
+        resposta: "B"
+      
       },
 
       {
@@ -723,8 +723,8 @@ const paises = [
           C: "Sistemas de tempestades severas",
           D: "Nevascas tropicais"
         },
-        resposta: "C",
-        pontos: 30
+        resposta: "C"
+        
       },
 
       {
@@ -737,8 +737,8 @@ const paises = [
           C: "Samurais",
           D: "Povos indígenas norte-americanos"
         },
-        resposta: "A",
-        pontos: 30
+        resposta: "A"
+        
       },
 
       // ⭐ ESPECIAL
@@ -791,8 +791,8 @@ const paises = [
           C: "Tundra",
           D: "Taiga siberiana"
         },
-        resposta: "B",
-        pontos: 10
+        resposta: "B"
+        
       },
 
       {
@@ -805,8 +805,8 @@ const paises = [
           C: "Lince-ibérico",
           D: "Urso-polar"
         },
-        resposta: "D",
-        pontos: 10
+        resposta: "D"
+        
       },
 
       {
@@ -819,8 +819,8 @@ const paises = [
           C: "Polar",
           D: "Tropical amazônico"
         },
-        resposta: "C",
-        pontos: 10
+        resposta: "C"
+        
       },
 
       // 🟡 MÉDIO
@@ -834,8 +834,8 @@ const paises = [
           C: "Temperaturas polares",
           D: "Verões quentes e secos"
         },
-        resposta: "A",
-        pontos: 20
+        resposta: "A"
+        
       },
 
       {
@@ -848,8 +848,8 @@ const paises = [
           C: "Amazônia",
           D: "Antártida"
         },
-        resposta: "C",
-        pontos: 20
+        resposta: "C"
+        
       },
 
       {
@@ -862,8 +862,8 @@ const paises = [
           C: "Palmeira amazônica",
           D: "Pinheiro tropical"
         },
-        resposta: "B",
-        pontos: 20
+        resposta: "B"
+        
       },
 
       // 🔴 DIFÍCIL
@@ -877,8 +877,8 @@ const paises = [
           C: "Por causa do relevo, altitude e influência do mar",
           D: "Porque todo o país está no deserto"
         },
-        resposta: "D",
-        pontos: 30
+        resposta: "D"
+        
       },
 
       {
@@ -891,8 +891,8 @@ const paises = [
           C: "Tundra",
           D: "Manguezal tropical"
         },
-        resposta: "A",
-        pontos: 30
+        resposta: "A"
+        
       },
 
       {
@@ -905,8 +905,8 @@ const paises = [
           C: "Apenas nas ilhas",
           D: "Apenas nas áreas rurais"
         },
-        resposta: "B",
-        pontos: 30
+        resposta: "B"
+        
       },
 
       // ⭐ ESPECIAL
@@ -957,8 +957,8 @@ franca: {
         C: "Temperado",
         D: "Equatorial"
       },
-      resposta: "C",
-      pontos: 10
+      resposta: "C"
+      
     },
 
     {
@@ -971,8 +971,8 @@ franca: {
         C: "Panda-gigante",
         D: "Girafa"
       },
-      resposta: "A",
-      pontos: 10
+      resposta: "A"
+      
     },
 
     {
@@ -985,8 +985,8 @@ franca: {
         C: "Tundra",
         D: "Savana africana"
       },
-      resposta: "B",
-      pontos: 10
+      resposta: "B"
+      
     },
 
     // 🟡 MÉDIO
@@ -1000,8 +1000,8 @@ franca: {
         C: "Manguezal",
         D: "Ambientes alpinos"
       },
-      resposta: "D",
-      pontos: 20
+      resposta: "D"
+      
     },
 
     {
@@ -1014,8 +1014,8 @@ franca: {
         C: "Canguru",
         D: "Elefante"
       },
-      resposta: "A",
-      pontos: 20
+      resposta: "A"
+      
     },
 
     {
@@ -1028,8 +1028,8 @@ franca: {
         C: "Equatorial",
         D: "Desértico extremo"
       },
-      resposta: "B",
-      pontos: 20
+      resposta: "B"
+      
     },
 
     // 🔴 DIFÍCIL
@@ -1043,8 +1043,8 @@ franca: {
         C: "Verões quentes e relativamente secos",
         D: "Clima equatorial"
       },
-      resposta: "C",
-      pontos: 30
+      resposta: "C"
+      
     },
 
     {
@@ -1057,8 +1057,8 @@ franca: {
         C: "Savana tropical",
         D: "Floresta amazônica"
       },
-      resposta: "A",
-      pontos: 30
+      resposta: "A"
+      
     },
 
     {
@@ -1071,8 +1071,8 @@ franca: {
         C: "Patagônia",
         D: "Alasca"
       },
-      resposta: "A",
-      pontos: 30
+      resposta: "A"
+      
     },
 
     // ⭐ ESPECIAL
@@ -1086,8 +1086,8 @@ franca: {
         C: "Porque todo o território possui clima tropical",
         D: "Porque não existem montanhas"
       },
-      resposta: "A",
-      pontos: 50
+      resposta: "A"
+      
     }
   ],
 
@@ -1125,8 +1125,8 @@ alemanha: {
         C: "Savana",
         D: "Tundra"
       },
-      resposta: "B",
-      pontos: 10
+      resposta: "B"
+      
     },
 
     {
@@ -1139,8 +1139,8 @@ alemanha: {
         C: "Girafa",
         D: "Panda"
       },
-      resposta: "A",
-      pontos: 10
+      resposta: "A"
+      
     },
 
     {
@@ -1153,8 +1153,8 @@ alemanha: {
         C: "Temperado",
         D: "Tropical"
       },
-      resposta: "C",
-      pontos: 10
+      resposta: "C"
+   
     },
 
     // 🟡 MÉDIO
@@ -1168,8 +1168,8 @@ alemanha: {
         C: "Vegetação desértica",
         D: "Vegetação de manguezal"
       },
-      resposta: "D",
-      pontos: 20
+      resposta: "D"
+      
     },
 
     {
@@ -1182,8 +1182,8 @@ alemanha: {
         C: "Elefante",
         D: "Girafa"
       },
-      resposta: "A",
-      pontos: 20
+      resposta: "A"
+      
     },
 
     {
@@ -1196,8 +1196,8 @@ alemanha: {
         C: "Clima equatorial",
         D: "Seca tropical"
       },
-      resposta: "B",
-      pontos: 20
+      resposta: "B"
+      
     },
 
     // 🔴 DIFÍCIL
@@ -1211,8 +1211,8 @@ alemanha: {
         C: "Ser uma floresta tropical",
         D: "Ser uma região polar"
       },
-      resposta: "A",
-      pontos: 30
+      resposta: "A"
+      
     },
 
     {
@@ -1225,8 +1225,8 @@ alemanha: {
         C: "Apenas plantas tropicais",
         D: "Vegetação exclusivamente aquática"
       },
-      resposta: "B",
-      pontos: 30
+      resposta: "B"
+      
     },
 
     {
@@ -1239,8 +1239,8 @@ alemanha: {
         C: "Cerveja",
         D: "Água de coco"
       },
-      resposta: "D",
-      pontos: 30
+      resposta: "D"
+      
     },
 
     // ⭐ ESPECIAL
@@ -1254,8 +1254,8 @@ alemanha: {
         C: "Floresta amazônica e savanas",
         D: "Tundra e gelo permanente"
       },
-      resposta: "B",
-      pontos: 50
+      resposta: "B"
+   
     }
   ],
 
@@ -1293,8 +1293,8 @@ italia: {
         C: "Equatorial",
         D: "Desértico"
       },
-      resposta: "A",
-      pontos: 10
+      resposta: "A"
+      
     },
 
     {
@@ -1307,8 +1307,8 @@ italia: {
         C: "Panda",
         D: "Girafa"
       },
-      resposta: "B",
-      pontos: 10
+      resposta: "B"
+      
     },
 
     {
@@ -1321,8 +1321,8 @@ italia: {
         C: "Palmeira amazônica",
         D: "Bétula polar"
       },
-      resposta: "C",
-      pontos: 10
+      resposta: "C"
+      
     },
 
     // 🟡 MÉDIO
@@ -1336,8 +1336,8 @@ italia: {
         C: "Vegetação mediterrânea",
         D: "Floresta equatorial"
       },
-      resposta: "D",
-      pontos: 20
+      resposta: "D"
+      
     },
 
     {
@@ -1350,8 +1350,8 @@ italia: {
         C: "Girafa",
         D: "Camelo"
       },
-      resposta: "A",
-      pontos: 20
+      resposta: "A"
+      
     },
 
     {
@@ -1364,8 +1364,8 @@ italia: {
         C: "Sempre com neve",
         D: "Equatoriais"
       },
-      resposta: "C",
-      pontos: 20
+      resposta: "C"
+      
     },
 
     // 🔴 DIFÍCIL
@@ -1379,8 +1379,8 @@ italia: {
         C: "Alpes",
         D: "Montanhas Rochosas"
       },
-      resposta: "D",
-      pontos: 30
+      resposta: "D"
+      
     },
 
     {
@@ -1393,8 +1393,8 @@ italia: {
         C: "Às chuvas equatoriais",
         D: "À tundra"
       },
-      resposta: "A",
-      pontos: 30
+      resposta: "A"
+      
     },
 
     {
@@ -1407,8 +1407,8 @@ italia: {
         C: "Taco",
         D: "Cuscuz marroquino"
       },
-      resposta: "B",
-      pontos: 30
+      resposta: "B"
+      
     },
 
     // ⭐ ESPECIAL
@@ -1422,8 +1422,8 @@ italia: {
         C: "Alpes, clima mediterrâneo e vegetação variada",
         D: "Deserto do Saara e savana"
       },
-      resposta: "C",
-      pontos: 50
+      resposta: "C"
+      
     }
   ],
 
@@ -1461,8 +1461,8 @@ reinoUnido: {
         C: "Desértico",
         D: "Tropical"
       },
-      resposta: "A",
-      pontos: 10
+      resposta: "A"
+      
     },
 
     {
@@ -1475,11 +1475,11 @@ reinoUnido: {
         C: "Girafa",
         D: "Panda"
       },
-      resposta: "B",
-      pontos: 10
+      resposta: "B"
+      
     },
 
-    {
+     {
       dificuldade: "facil",
       categoria: "Vegetação",
       pergunta: "Qual tipo de vegetação aparece em várias áreas do Reino Unido?",
@@ -1489,8 +1489,8 @@ reinoUnido: {
         C: "Campos e pastagens",
         D: "Tundra tropical"
       },
-      resposta: "C",
-      pontos: 10
+      resposta: "C"
+      
     },
 
     // 🟡 MÉDIO
@@ -1504,8 +1504,8 @@ reinoUnido: {
         C: "Campos temperados",
         D: "Savana tropical"
       },
-      resposta: "D",
-      pontos: 20
+      resposta: "D"
+      
     },
 
     {
@@ -1518,8 +1518,8 @@ reinoUnido: {
         C: "Canguru",
         D: "Camelo"
       },
-      resposta: "A",
-      pontos: 20
+      resposta: "A"
+      
     },
 
     {
@@ -1532,8 +1532,8 @@ reinoUnido: {
         C: "Do clima marítimo",
         D: "Do clima polar"
       },
-      resposta: "B",
-      pontos: 20
+      resposta: "B"
+      
     },
 
     // 🔴 DIFÍCIL
@@ -1547,8 +1547,8 @@ reinoUnido: {
         C: "Desertos",
         D: "Manguezais"
       },
-      resposta: "D",
-      pontos: 30
+      resposta: "D"
+      
     },
 
     {
@@ -1561,8 +1561,8 @@ reinoUnido: {
         C: "Deserto ao redor do país",
         D: "Gelo permanente"
       },
-      resposta: "A",
-      pontos: 30
+      resposta: "A"
+      
     },
 
     {
@@ -1575,8 +1575,8 @@ reinoUnido: {
         C: "Guaraná",
         D: "Café turco"
       },
-      resposta: "B",
-      pontos: 30
+      resposta: "B"
+      
     },
 
     // ⭐ ESPECIAL
@@ -1590,8 +1590,8 @@ reinoUnido: {
         C: "Tundra e gelo permanente",
         D: "Clima oceânico, campos e áreas de floresta temperada"
       },
-      resposta: "C",
-      pontos: 50
+      resposta: "C"
+      
     }
   ],
 
@@ -1629,8 +1629,8 @@ islandia: {
         C: "Equatorial",
         D: "Desértico"
       },
-      resposta: "B",
-      pontos: 10
+      resposta: "B"
+      
     },
 
     {
@@ -1643,8 +1643,8 @@ islandia: {
         C: "Girafa",
         D: "Panda"
       },
-      resposta: "D",
-      pontos: 10
+      resposta: "D"
+      
     },
 
     {
@@ -1657,8 +1657,8 @@ islandia: {
         C: "Deserto tropical",
         D: "Savana africana"
       },
-      resposta: "C",
-      pontos: 10
+      resposta: "C"
+      
     },
 
     // 🟡 MÉDIO
@@ -1672,8 +1672,8 @@ islandia: {
         C: "Florestas amazônicas",
         D: "Selvas equatoriais"
       },
-      resposta: "A",
-      pontos: 20
+      resposta: "A"
+      
     },
 
     {
@@ -1686,8 +1686,8 @@ islandia: {
         C: "Papagaio amazônico",
         D: "Papagaio-do-mar"
       },
-      resposta: "C",
-      pontos: 20
+      resposta: "C"
+      
     },
 
     {
@@ -1700,8 +1700,8 @@ islandia: {
         C: "Furacão tropical permanente",
         D: "Tempestade de areia"
       },
-      resposta: "B",
-      pontos: 20
+      resposta: "B"
+      
     },
 
     // 🔴 DIFÍCIL
@@ -1715,8 +1715,8 @@ islandia: {
         C: "Porque está próxima do Equador",
         D: "Porque não possui oceanos"
       },
-      resposta: "D",
-      pontos: 30
+      resposta: "D"
+      
     },
 
     {
@@ -1729,8 +1729,8 @@ islandia: {
         C: "Arco-íris permanente",
         D: "Sol negro"
       },
-      resposta: "A",
-      pontos: 30
+      resposta: "A"
+      
     },
 
     {
@@ -1743,8 +1743,8 @@ islandia: {
         C: "Cultura maia",
         D: "Cultura faraônica"
       },
-      resposta: "B",
-      pontos: 30
+      resposta: "B"
+      
     },
 
     // ⭐ ESPECIAL
@@ -1758,8 +1758,8 @@ islandia: {
         C: "Vulcões, geleiras, campos e atividade geotérmica",
         D: "Desertos quentes e clima tropical"
       },
-      resposta: "C",
-      pontos: 50
+      resposta: "C"
+      
     }
   ],
 
