@@ -4072,3 +4072,654 @@ function obterResumoPassaporte() {
     };
 
   }
+     /* =========================
+   🧩 SESSÃO 11
+   💾 SALVAR PROGRESSO
+========================= */
+
+
+// =========================================================
+// 💾 CONFIGURAÇÃO DO SALVAMENTO
+// =========================================================
+
+const CHAVE_SALVAMENTO =
+    "jogoDosPaises_progresso";
+
+const VERSAO_SALVAMENTO =
+    2;
+
+
+// =========================================================
+// 💾 CRIAR DADOS DO JOGADOR
+// =========================================================
+
+function criarDadosSalvamento() {
+
+    return {
+
+        versao:
+            VERSAO_SALVAMENTO,
+
+        dataSalvamento:
+            new Date().toISOString(),
+
+
+        // =================================================
+        // 🎮 ESTADO DO JOGADOR
+        // =================================================
+
+        estadoJogador: {
+
+            pontos:
+                estadoJogador.pontos,
+
+            vidas:
+                estadoJogador.vidas,
+
+            acertos:
+                estadoJogador.acertos,
+
+            erros:
+                estadoJogador.erros,
+
+            sequenciaAcertos:
+                estadoJogador.sequenciaAcertos,
+
+            maiorSequencia:
+                estadoJogador.maiorSequencia,
+
+            perguntasRespondidas:
+                estadoJogador.perguntasRespondidas,
+
+            especiaisAcertadas:
+                estadoJogador.especiaisAcertadas,
+
+            especiaisRespondidas:
+                estadoJogador.especiaisRespondidas,
+
+            acertosPorCategoria:
+                estadoJogador.acertosPorCategoria
+
+        },
+
+
+        // =================================================
+        // 🛂 PASSAPORTE
+        // =================================================
+
+        passaporteJogador:
+            typeof passaporteJogador !== "undefined"
+                ? passaporteJogador
+                : null,
+
+
+        // =================================================
+        // 🏆 CONQUISTAS
+        // =================================================
+
+        conquistas:
+            typeof conquistas !== "undefined"
+                ? conquistas.map(
+                    conquista => ({
+
+                        id:
+                            conquista.id,
+
+                        desbloqueada:
+                            conquista.desbloqueada,
+
+                        secreta:
+                            conquista.secreta || false
+
+                    })
+                )
+                : [],
+
+
+        // =================================================
+        // 🏅 MÉRITOS
+        // =================================================
+
+        meritos:
+            typeof meritos !== "undefined"
+                ? meritos.map(
+                    merito => ({
+
+                        id:
+                            merito.id,
+
+                        desbloqueada:
+                            merito.desbloqueada || false
+
+                    })
+                )
+                : [],
+
+
+        // =================================================
+        // 🌍 PAÍSES DESBLOQUEADOS
+        // =================================================
+
+        paisesDesbloqueados:
+            typeof paisesDesbloqueados !==
+                "undefined"
+                ? [...paisesDesbloqueados]
+                : [],
+
+
+        // =================================================
+        // 🎁 SEGREDOS E EXTRAS
+        // =================================================
+
+        estadoSegredos:
+            typeof estadoSegredos !== "undefined"
+                ? estadoSegredos
+                : null
+
+    };
+
+}
+
+
+// =========================================================
+// 💾 SALVAR PROGRESSO
+// =========================================================
+
+function salvarProgresso() {
+
+    try {
+
+        const dados =
+            criarDadosSalvamento();
+
+
+        const dadosConvertidos =
+            JSON.stringify(dados);
+
+
+        localStorage.setItem(
+            CHAVE_SALVAMENTO,
+            dadosConvertidos
+        );
+
+
+        console.log(
+            "💾 Progresso salvo com sucesso!"
+        );
+
+
+        return true;
+
+    } catch (erro) {
+
+        console.error(
+            "❌ Erro ao salvar progresso:",
+            erro
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+// =========================================================
+// 📂 VERIFICAR SALVAMENTO
+// =========================================================
+
+function existeProgressoSalvo() {
+
+    return (
+        localStorage.getItem(
+            CHAVE_SALVAMENTO
+        ) !== null
+    );
+
+}
+
+
+// =========================================================
+// 📂 CARREGAR PROGRESSO
+// =========================================================
+
+function carregarProgresso() {
+
+    try {
+
+        const dadosSalvos =
+            localStorage.getItem(
+                CHAVE_SALVAMENTO
+            );
+
+
+        if (!dadosSalvos) {
+
+            console.log(
+                "📂 Nenhum progresso encontrado."
+            );
+
+            return false;
+
+        }
+
+
+        const dados =
+            JSON.parse(dadosSalvos);
+
+
+        // =================================================
+        // 🎮 ESTADO DO JOGADOR
+        // =================================================
+
+        if (
+            dados.estadoJogador
+        ) {
+
+            Object.assign(
+                estadoJogador,
+                dados.estadoJogador
+            );
+
+        }
+
+
+        // =================================================
+        // 🛂 PASSAPORTE
+        // =================================================
+
+        if (
+            dados.passaporteJogador
+        ) {
+
+            passaporteJogador =
+                dados.passaporteJogador;
+
+        }
+
+
+        // =================================================
+        // 🏆 CONQUISTAS
+        // =================================================
+
+        if (
+            dados.conquistas &&
+            typeof conquistas !== "undefined"
+        ) {
+
+            dados.conquistas.forEach(
+                conquistaSalva => {
+
+                    const conquista =
+                        conquistas.find(
+                            item =>
+                                item.id ===
+                                conquistaSalva.id
+                        );
+
+
+                    if (conquista) {
+
+                        conquista.desbloqueada =
+                            conquistaSalva.desbloqueada;
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        // =================================================
+        // 🏅 MÉRITOS
+        // =================================================
+
+        if (
+            dados.meritos &&
+            typeof meritos !== "undefined"
+        ) {
+
+            dados.meritos.forEach(
+                meritoSalvo => {
+
+                    const merito =
+                        meritos.find(
+                            item =>
+                                item.id ===
+                                meritoSalvo.id
+                        );
+
+
+                    if (merito) {
+
+                        merito.desbloqueada =
+                            meritoSalvo.desbloqueada;
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        // =================================================
+        // 🌍 PAÍSES DESBLOQUEADOS
+        // =================================================
+
+        if (
+            dados.paisesDesbloqueados &&
+            typeof paisesDesbloqueados !==
+                "undefined"
+        ) {
+
+            if (
+                Array.isArray(
+                    paisesDesbloqueados
+                )
+            ) {
+
+                paisesDesbloqueados.length = 0;
+
+
+                dados.paisesDesbloqueados
+                    .forEach(
+                        pais => {
+
+                            paisesDesbloqueados
+                                .push(pais);
+
+                        }
+                    );
+
+            }
+
+        }
+
+
+        // =================================================
+        // 🎁 SEGREDOS E EXTRAS
+        // =================================================
+
+        if (
+            dados.estadoSegredos &&
+            typeof estadoSegredos !==
+                "undefined"
+        ) {
+
+            estadoSegredos =
+                dados.estadoSegredos;
+
+        }
+
+
+        // =================================================
+        // 🔄 ATUALIZAR INTERFACE
+        // =================================================
+
+        if (
+            typeof atualizarInterfacePontuacao ===
+            "function"
+        ) {
+
+            atualizarInterfacePontuacao();
+
+        }
+
+
+        if (
+            typeof mostrarConquistas ===
+            "function"
+        ) {
+
+            mostrarConquistas();
+
+        }
+
+
+        console.log(
+            "📂 Progresso carregado com sucesso!"
+        );
+
+
+        return true;
+
+    } catch (erro) {
+
+        console.error(
+            "❌ Erro ao carregar progresso:",
+            erro
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+// =========================================================
+// 🔄 SALVAMENTO AUTOMÁTICO
+// =========================================================
+
+function salvarAutomaticamente() {
+
+    salvarProgresso();
+
+}
+
+
+// =========================================================
+// ⏱️ SALVAR A CADA 30 SEGUNDOS
+// =========================================================
+
+setInterval(
+
+    () => {
+
+        salvarProgresso();
+
+    },
+
+    30000
+
+);
+
+
+// =========================================================
+// ❓ SALVAR APÓS PERGUNTA
+// =========================================================
+
+function salvarDepoisDaPergunta() {
+
+    salvarProgresso();
+
+}
+
+
+// =========================================================
+// 🛂 SALVAR APÓS CARIMBO
+// =========================================================
+
+function salvarDepoisDoCarimbo() {
+
+    salvarProgresso();
+
+}
+
+
+// =========================================================
+// 🏆 SALVAR APÓS CONQUISTA
+// =========================================================
+
+function salvarDepoisDaConquista() {
+
+    salvarProgresso();
+
+}
+
+
+// =========================================================
+// 🏅 SALVAR APÓS MÉRITO
+// =========================================================
+
+function salvarDepoisDoMerito() {
+
+    salvarProgresso();
+
+}
+
+
+// =========================================================
+// 🎁 SALVAR APÓS SEGREDO
+// =========================================================
+
+function salvarDepoisDoSegredo() {
+
+    salvarProgresso();
+
+}
+
+
+// =========================================================
+// 🚪 SALVAR ANTES DE FECHAR
+// =========================================================
+
+window.addEventListener(
+
+    "beforeunload",
+
+    () => {
+
+        salvarProgresso();
+
+    }
+
+);
+
+
+// =========================================================
+// 🗑️ APAGAR PROGRESSO
+// =========================================================
+
+function apagarProgresso() {
+
+    const confirmar =
+        confirm(
+            "⚠️ Tem certeza que deseja apagar todo o progresso?"
+        );
+
+
+    if (!confirmar) {
+
+        return false;
+
+    }
+
+
+    localStorage.removeItem(
+        CHAVE_SALVAMENTO
+    );
+
+
+    console.log(
+        "🗑️ Todo o progresso foi apagado."
+    );
+
+
+    return true;
+
+}
+
+
+// =========================================================
+// 📊 INFORMAÇÕES DO SALVAMENTO
+// =========================================================
+
+function obterInformacoesSalvamento() {
+
+    const dadosSalvos =
+        localStorage.getItem(
+            CHAVE_SALVAMENTO
+        );
+
+
+    if (!dadosSalvos) {
+
+        return {
+
+            existe: false,
+
+            data: null,
+
+            versao: null
+
+        };
+
+    }
+
+
+    try {
+
+        const dados =
+            JSON.parse(dadosSalvos);
+
+
+        return {
+
+            existe: true,
+
+            data:
+                dados.dataSalvamento || null,
+
+            versao:
+                dados.versao || 1
+
+        };
+
+    } catch {
+
+        return {
+
+            existe: false,
+
+            data: null,
+
+            versao: null
+
+        };
+
+    }
+
+}
+
+
+// =========================================================
+// 🚀 INICIAR SISTEMA DE SALVAMENTO
+// =========================================================
+
+function iniciarSistemaDeSalvamento() {
+
+    if (
+        existeProgressoSalvo()
+    ) {
+
+        carregarProgresso();
+
+
+        console.log(
+            "💾 Salvamento anterior restaurado."
+        );
+
+    } else {
+
+        console.log(
+            "🆕 Nenhum progresso anterior."
+        );
+
+    }
+
+}
