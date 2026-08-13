@@ -2943,8 +2943,7 @@ function organizarPerguntas(perguntas) {
         ...embaralharPerguntas(especiais)
 
     ];
-
-  }
+    };
 /* =========================
    🧩 SESSÃO 9
    ❤️ PONTUAÇÃO E VIDAS
@@ -2977,13 +2976,19 @@ let estadoJogador = {
 
     acertosPorCategoria: {
 
-        "🌳 Biomas": 0,
+        "Bioma": 0,
 
-        "🌡️ Clima": 0,
+        "Clima": 0,
 
-        "🌱 Vegetação": 0,
+        "Vegetação": 0,
 
-        "🐾 Fauna": 0
+        "Fauna": 0,
+
+        "Cultura": 0,
+
+        "Sociedade": 0,
+
+        "Natureza": 0
 
     }
 
@@ -2996,13 +3001,13 @@ let estadoJogador = {
 
 const pontosDificuldade = {
 
-    "Fácil": 100,
+    "facil": 100,
 
-    "Médio": 200,
+    "medio": 200,
 
-    "Difícil": 300,
+    "dificil": 300,
 
-    "⭐ Especial": 500
+    "especial": 500
 
 };
 
@@ -3023,11 +3028,13 @@ function calcularMultiplicador() {
 
     }
 
+
     if (sequencia >= 5) {
 
         return 2;
 
     }
+
 
     if (sequencia >= 3) {
 
@@ -3050,13 +3057,17 @@ function calcularPontosPergunta(pergunta) {
     if (!pergunta) return 0;
 
 
+    // A dificuldade da pergunta
+    // define os pontos.
+
     const pontosBase =
-        pergunta.pontos ??
         pontosDificuldade[
             pergunta.dificuldade
-        ] ??
-        0;
+        ] ?? 0;
 
+
+    // Aplica o multiplicador
+    // da sequência de acertos.
 
     const multiplicador =
         calcularMultiplicador();
@@ -3082,6 +3093,8 @@ function registrarAcerto(pergunta) {
     estadoJogador.sequenciaAcertos++;
 
 
+    // 🔥 Maior sequência
+
     if (
         estadoJogador.sequenciaAcertos >
         estadoJogador.maiorSequencia
@@ -3093,7 +3106,7 @@ function registrarAcerto(pergunta) {
     }
 
 
-    // ⭐ Pontuação
+    // ⭐ Calcula os pontos
 
     const pontos =
         calcularPontosPergunta(pergunta);
@@ -3122,7 +3135,7 @@ function registrarAcerto(pergunta) {
 
     if (
         pergunta.dificuldade ===
-        "⭐ Especial"
+        "especial"
     ) {
 
         estadoJogador.especiaisAcertadas++;
@@ -3166,7 +3179,7 @@ function registrarErro(pergunta) {
     if (
         pergunta &&
         pergunta.dificuldade ===
-        "⭐ Especial"
+        "especial"
     ) {
 
         estadoJogador.especiaisRespondidas++;
@@ -3185,7 +3198,9 @@ function registrarErro(pergunta) {
 
 function perderVida() {
 
-    if (estadoJogador.vidas <= 0) {
+    if (
+        estadoJogador.vidas <= 0
+    ) {
 
         estadoJogador.vidas = 0;
 
@@ -3200,7 +3215,9 @@ function perderVida() {
     atualizarVidas();
 
 
-    if (estadoJogador.vidas <= 0) {
+    if (
+        estadoJogador.vidas <= 0
+    ) {
 
         gameOver();
 
@@ -3215,7 +3232,9 @@ function perderVida() {
 
 function recuperarVida() {
 
-    if (estadoJogador.vidas >= 3) {
+    if (
+        estadoJogador.vidas >= 3
+    ) {
 
         estadoJogador.vidas = 3;
 
@@ -3238,7 +3257,9 @@ function recuperarVida() {
 function atualizarVidas() {
 
     const elemento =
-        document.getElementById("vidas");
+        document.getElementById(
+            "vidas"
+        );
 
 
     if (!elemento) return;
@@ -3281,7 +3302,9 @@ function atualizarVidas() {
 function atualizarPontuacao() {
 
     const elemento =
-        document.getElementById("pontuacao");
+        document.getElementById(
+            "pontuacao"
+        );
 
 
     if (!elemento) return;
@@ -3300,7 +3323,9 @@ function atualizarPontuacao() {
 function atualizarSequencia() {
 
     const elemento =
-        document.getElementById("sequencia");
+        document.getElementById(
+            "sequencia"
+        );
 
 
     if (!elemento) return;
@@ -3352,7 +3377,9 @@ function registrarRespostaQuiz(
     if (acertou) {
 
         const pontos =
-            registrarAcerto(pergunta);
+            registrarAcerto(
+                pergunta
+            );
 
 
         console.log(
@@ -3362,7 +3389,9 @@ function registrarRespostaQuiz(
 
     } else {
 
-        registrarErro(pergunta);
+        registrarErro(
+            pergunta
+        );
 
 
         console.log(
@@ -3387,9 +3416,6 @@ function gameOver() {
         "💔 Todas as vidas foram perdidas!"
     );
 
-
-    // Futuramente podemos abrir
-    // uma tela própria de Game Over.
 
     const elemento =
         document.getElementById(
@@ -3434,13 +3460,19 @@ function reiniciarPontuacaoPais() {
 
     estadoJogador.acertosPorCategoria = {
 
-        "🌳 Biomas": 0,
+        "Bioma": 0,
 
-        "🌡️ Clima": 0,
+        "Clima": 0,
 
-        "🌱 Vegetação": 0,
+        "Vegetação": 0,
 
-        "🐾 Fauna": 0
+        "Fauna": 0,
+
+        "Cultura": 0,
+
+        "Sociedade": 0,
+
+        "Natureza": 0
 
     };
 
@@ -3458,13 +3490,17 @@ function obterResumoJogador() {
 
     return {
 
-        pontos: estadoJogador.pontos,
+        pontos:
+            estadoJogador.pontos,
 
-        vidas: estadoJogador.vidas,
+        vidas:
+            estadoJogador.vidas,
 
-        acertos: estadoJogador.acertos,
+        acertos:
+            estadoJogador.acertos,
 
-        erros: estadoJogador.erros,
+        erros:
+            estadoJogador.erros,
 
         maiorSequencia:
             estadoJogador.maiorSequencia,
@@ -3477,6 +3513,7 @@ function obterResumoJogador() {
 
     };
 
+}
 }
      /* =========================
    🧩 SESSÃO 10
