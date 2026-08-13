@@ -1774,3 +1774,133 @@ islandia: {
     "🌌 A aurora boreal pode ser observada na Islândia em determinadas épocas."
   ]
 }
+   /* =========================
+   🧩 SESSÃO 4
+   CONQUISTAS
+========================= */
+
+const conquistas = [
+
+    {
+        id: "mundo-pequeno",
+        nome: "O Mundo é Pequeno Demais",
+        icone: "🌍",
+        descricao: "Complete os 10 destinos da jornada.",
+        desbloqueada: false
+    },
+
+    {
+        id: "carimbo",
+        nome: "Carimbo Após Carimbo",
+        icone: "🛂",
+        descricao: "Conquiste todos os 10 carimbos.",
+        desbloqueada: false
+    },
+
+    {
+        id: "sem-volta",
+        nome: "Sem Passagem de Volta",
+        icone: "✈️",
+        descricao: "Complete 5 países consecutivamente.",
+        desbloqueada: false
+    },
+
+    {
+        id: "primeira-edicao",
+        nome: "Viajante de Primeira Edição",
+        icone: "📖",
+        descricao: "Complete todos os 10 países pela primeira vez.",
+        desbloqueada: false
+    },
+
+    {
+        id: "atlas",
+        nome: "O Atlas Sou Eu",
+        icone: "🧠",
+        descricao: "Acerte todas as 100 perguntas.",
+        desbloqueada: false
+    },
+
+    {
+        id: "sussurros",
+        nome: "Sussurros da Natureza",
+        icone: "🌿",
+        descricao: "Acerte perguntas sobre natureza em todos os países.",
+        desbloqueada: false
+    },
+
+    {
+        id: "tres-versoes",
+        nome: "Três Versões de Mim",
+        icone: "🎭",
+        descricao: "Jogue no Fácil, Médio e Difícil.",
+        desbloqueada: false
+    },
+
+    {
+        id: "sem-medo",
+        nome: "Sem Medo do Vermelho",
+        icone: "🔥",
+        descricao: "Complete um país no Difícil.",
+        desbloqueada: false
+    },
+
+    {
+        id: "mundo-nao-assusta",
+        nome: "O Mundo Não Me Assusta",
+        icone: "👑",
+        descricao: "Complete todos os países no Difícil.",
+        desbloqueada: false
+    },
+
+    {
+        id: "nem-arranhao",
+        nome: "Nem um Arranhão",
+        icone: "❤️",
+        descricao: "Complete um país sem perder nenhum coração.",
+        desbloqueada: false
+    },
+
+    {
+        id: "olho-cartografo",
+        nome: "Olho de Cartógrafo",
+        icone: "🧭",
+        descricao: "Acerte a primeira pergunta dos 10 países.",
+        desbloqueada: false
+    },
+
+    {
+        id: "instinto",
+        nome: "Instinto de Explorador",
+        icone: "⚡",
+        descricao: "Acerte 5 perguntas consecutivas.",
+        desbloqueada: false
+    },
+
+    {
+        id: "bussola",
+        nome: "Onde a Bússola Não Aponta",
+        icone: "⭐",
+        descricao: "Acerte todas as perguntas especiais.",
+        desbloqueada: false
+    },
+
+    {
+        id: "alem-mapa",
+        nome: "Além do Mapa",
+        icone: "🌟",
+        descricao: "Acerte uma pergunta especial sem perder coração.",
+        desbloqueada: false
+    },
+
+    {
+        id: "secreta",
+        nome: "Você Não Deveria Estar Aqui...",
+        icone: "🕵️",
+        descricao: "???",
+        desbloqueada: false,
+        secreta: true
+    }
+
+];
+
