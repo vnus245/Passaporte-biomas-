@@ -2945,4 +2945,536 @@ function organizarPerguntas(perguntas) {
     ];
 
   }
-            
+/* =========================
+   🧩 SESSÃO 9
+   ❤️ PONTUAÇÃO E VIDAS
+========================= */
+
+
+// =========================================================
+// 🎮 ESTADO DO JOGADOR
+// =========================================================
+
+let estadoJogador = {
+
+    pontos: 0,
+
+    vidas: 3,
+
+    acertos: 0,
+
+    erros: 0,
+
+    sequenciaAcertos: 0,
+
+    maiorSequencia: 0,
+
+    perguntasRespondidas: 0,
+
+    especiaisAcertadas: 0,
+
+    especiaisRespondidas: 0,
+
+    acertosPorCategoria: {
+
+        "🌳 Biomas": 0,
+
+        "🌡️ Clima": 0,
+
+        "🌱 Vegetação": 0,
+
+        "🐾 Fauna": 0
+
+    }
+
+};
+
+
+// =========================================================
+// ⭐ PONTOS POR DIFICULDADE
+// =========================================================
+
+const pontosDificuldade = {
+
+    "Fácil": 100,
+
+    "Médio": 200,
+
+    "Difícil": 300,
+
+    "⭐ Especial": 500
+
+};
+
+
+// =========================================================
+// 🔥 MULTIPLICADOR
+// =========================================================
+
+function calcularMultiplicador() {
+
+    const sequencia =
+        estadoJogador.sequenciaAcertos;
+
+
+    if (sequencia >= 10) {
+
+        return 3;
+
+    }
+
+    if (sequencia >= 5) {
+
+        return 2;
+
+    }
+
+    if (sequencia >= 3) {
+
+        return 1.5;
+
+    }
+
+
+    return 1;
+
+}
+
+
+// =========================================================
+// ⭐ CALCULAR PONTOS
+// =========================================================
+
+function calcularPontosPergunta(pergunta) {
+
+    if (!pergunta) return 0;
+
+
+    const pontosBase =
+        pergunta.pontos ??
+        pontosDificuldade[
+            pergunta.dificuldade
+        ] ??
+        0;
+
+
+    const multiplicador =
+        calcularMultiplicador();
+
+
+    return Math.round(
+        pontosBase * multiplicador
+    );
+
+}
+
+
+// =========================================================
+// ✅ REGISTRAR ACERTO
+// =========================================================
+
+function registrarAcerto(pergunta) {
+
+    estadoJogador.acertos++;
+
+    estadoJogador.perguntasRespondidas++;
+
+    estadoJogador.sequenciaAcertos++;
+
+
+    if (
+        estadoJogador.sequenciaAcertos >
+        estadoJogador.maiorSequencia
+    ) {
+
+        estadoJogador.maiorSequencia =
+            estadoJogador.sequenciaAcertos;
+
+    }
+
+
+    // ⭐ Pontuação
+
+    const pontos =
+        calcularPontosPergunta(pergunta);
+
+
+    estadoJogador.pontos += pontos;
+
+
+    // 🌳 Categoria
+
+    if (
+        pergunta.categoria &&
+        estadoJogador.acertosPorCategoria[
+            pergunta.categoria
+        ] !== undefined
+    ) {
+
+        estadoJogador.acertosPorCategoria[
+            pergunta.categoria
+        ]++;
+
+    }
+
+
+    // ⭐ Pergunta especial
+
+    if (
+        pergunta.dificuldade ===
+        "⭐ Especial"
+    ) {
+
+        estadoJogador.especiaisAcertadas++;
+
+        estadoJogador.especiaisRespondidas++;
+
+    }
+
+
+    atualizarInterfacePontuacao();
+
+
+    return pontos;
+
+}
+
+
+// =========================================================
+// ❌ REGISTRAR ERRO
+// =========================================================
+
+function registrarErro(pergunta) {
+
+    estadoJogador.erros++;
+
+    estadoJogador.perguntasRespondidas++;
+
+
+    // Quebra a sequência
+
+    estadoJogador.sequenciaAcertos = 0;
+
+
+    // ❤️ Perde uma vida
+
+    perderVida();
+
+
+    // ⭐ Pergunta especial respondida
+
+    if (
+        pergunta &&
+        pergunta.dificuldade ===
+        "⭐ Especial"
+    ) {
+
+        estadoJogador.especiaisRespondidas++;
+
+    }
+
+
+    atualizarInterfacePontuacao();
+
+}
+
+
+// =========================================================
+// ❤️ PERDER VIDA
+// =========================================================
+
+function perderVida() {
+
+    if (estadoJogador.vidas <= 0) {
+
+        estadoJogador.vidas = 0;
+
+        return;
+
+    }
+
+
+    estadoJogador.vidas--;
+
+
+    atualizarVidas();
+
+
+    if (estadoJogador.vidas <= 0) {
+
+        gameOver();
+
+    }
+
+}
+
+
+// =========================================================
+// ❤️ RECUPERAR VIDA
+// =========================================================
+
+function recuperarVida() {
+
+    if (estadoJogador.vidas >= 3) {
+
+        estadoJogador.vidas = 3;
+
+    } else {
+
+        estadoJogador.vidas++;
+
+    }
+
+
+    atualizarVidas();
+
+}
+
+
+// =========================================================
+// ❤️ MOSTRAR VIDAS
+// =========================================================
+
+function atualizarVidas() {
+
+    const elemento =
+        document.getElementById("vidas");
+
+
+    if (!elemento) return;
+
+
+    let coracoes = "";
+
+
+    for (
+        let i = 0;
+        i < 3;
+        i++
+    ) {
+
+        if (
+            i < estadoJogador.vidas
+        ) {
+
+            coracoes += "❤️";
+
+        } else {
+
+            coracoes += "🖤";
+
+        }
+
+    }
+
+
+    elemento.textContent =
+        coracoes;
+
+}
+
+
+// =========================================================
+// ⭐ MOSTRAR PONTOS
+// =========================================================
+
+function atualizarPontuacao() {
+
+    const elemento =
+        document.getElementById("pontuacao");
+
+
+    if (!elemento) return;
+
+
+    elemento.textContent =
+        `⭐ ${estadoJogador.pontos}`;
+
+}
+
+
+// =========================================================
+// 🎯 MOSTRAR SEQUÊNCIA
+// =========================================================
+
+function atualizarSequencia() {
+
+    const elemento =
+        document.getElementById("sequencia");
+
+
+    if (!elemento) return;
+
+
+    if (
+        estadoJogador.sequenciaAcertos >= 2
+    ) {
+
+        elemento.textContent =
+            `🔥 ${estadoJogador.sequenciaAcertos} seguidos`;
+
+    } else {
+
+        elemento.textContent = "";
+
+    }
+
+}
+
+
+// =========================================================
+// 📊 ATUALIZAR INTERFACE
+// =========================================================
+
+function atualizarInterfacePontuacao() {
+
+    atualizarPontuacao();
+
+    atualizarVidas();
+
+    atualizarSequencia();
+
+}
+
+
+// =========================================================
+// 🎯 REGISTRAR RESPOSTA DO QUIZ
+// =========================================================
+
+function registrarRespostaQuiz(
+    pergunta,
+    acertou
+) {
+
+    if (!pergunta) return;
+
+
+    if (acertou) {
+
+        const pontos =
+            registrarAcerto(pergunta);
+
+
+        console.log(
+            `✅ Acertou! +${pontos} pontos`
+        );
+
+
+    } else {
+
+        registrarErro(pergunta);
+
+
+        console.log(
+            "❌ Resposta errada!"
+        );
+
+    }
+
+
+    atualizarInterfacePontuacao();
+
+}
+
+
+// =========================================================
+// 💀 GAME OVER
+// =========================================================
+
+function gameOver() {
+
+    console.log(
+        "💔 Todas as vidas foram perdidas!"
+    );
+
+
+    // Futuramente podemos abrir
+    // uma tela própria de Game Over.
+
+    const elemento =
+        document.getElementById(
+            "mensagem-game-over"
+        );
+
+
+    if (elemento) {
+
+        elemento.textContent =
+            "💔 Você ficou sem vidas!";
+
+    }
+
+}
+
+
+// =========================================================
+// 🔄 REINICIAR PONTUAÇÃO DO PAÍS
+// =========================================================
+
+function reiniciarPontuacaoPais() {
+
+    estadoJogador.pontos = 0;
+
+    estadoJogador.vidas = 3;
+
+    estadoJogador.acertos = 0;
+
+    estadoJogador.erros = 0;
+
+    estadoJogador.sequenciaAcertos = 0;
+
+    estadoJogador.maiorSequencia = 0;
+
+    estadoJogador.perguntasRespondidas = 0;
+
+    estadoJogador.especiaisAcertadas = 0;
+
+    estadoJogador.especiaisRespondidas = 0;
+
+
+    estadoJogador.acertosPorCategoria = {
+
+        "🌳 Biomas": 0,
+
+        "🌡️ Clima": 0,
+
+        "🌱 Vegetação": 0,
+
+        "🐾 Fauna": 0
+
+    };
+
+
+    atualizarInterfacePontuacao();
+
+}
+
+
+// =========================================================
+// 📊 RESUMO DO JOGADOR
+// =========================================================
+
+function obterResumoJogador() {
+
+    return {
+
+        pontos: estadoJogador.pontos,
+
+        vidas: estadoJogador.vidas,
+
+        acertos: estadoJogador.acertos,
+
+        erros: estadoJogador.erros,
+
+        maiorSequencia:
+            estadoJogador.maiorSequencia,
+
+        especiaisAcertadas:
+            estadoJogador.especiaisAcertadas,
+
+        acertosPorCategoria:
+            estadoJogador.acertosPorCategoria
+
+    };
+
+}
