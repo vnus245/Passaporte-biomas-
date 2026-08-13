@@ -3478,3 +3478,597 @@ function obterResumoJogador() {
     };
 
 }
+     /* =========================
+   🧩 SESSÃO 10
+   🛂 PASSAPORTE E CARIMBOS
+========================= */
+
+
+// =========================================================
+// 🎫 ESTADO DO PASSAPORTE
+// =========================================================
+
+let passaporteJogador = {
+
+    paisesVisitados: [],
+
+    paisesCompletados: [],
+
+    carimbos: [],
+
+    curiosidadesDescobertas: [],
+
+    progressoPorPais: {}
+
+};
+
+
+// =========================================================
+// 🌍 LISTA DOS 10 DESTINOS
+// =========================================================
+
+const destinosPassaporte = [
+
+    {
+        id: "brasil",
+        nome: "Brasil",
+        bandeira: "🇧🇷"
+    },
+
+    {
+        id: "japao",
+        nome: "Japão",
+        bandeira: "🇯🇵"
+    },
+
+    {
+        id: "canada",
+        nome: "Canadá",
+        bandeira: "🇨🇦"
+    },
+
+    {
+        id: "franca",
+        nome: "França",
+        bandeira: "🇫🇷"
+    },
+
+    {
+        id: "italia",
+        nome: "Itália",
+        bandeira: "🇮🇹"
+    },
+
+    {
+        id: "australia",
+        nome: "Austrália",
+        bandeira: "🇦🇺"
+    },
+
+    {
+        id: "egito",
+        nome: "Egito",
+        bandeira: "🇪🇬"
+    },
+
+    {
+        id: "mexico",
+        nome: "México",
+        bandeira: "🇲🇽"
+    },
+
+    {
+        id: "india",
+        nome: "Índia",
+        bandeira: "🇮🇳"
+    },
+
+    {
+        id: "noruega",
+        nome: "Noruega",
+        bandeira: "🇳🇴"
+    }
+
+];
+
+
+// =========================================================
+// 🛂 REGISTRAR VISITA
+// =========================================================
+
+function registrarVisitaPais(paisId) {
+
+    if (!paisId) return;
+
+
+    // Se ainda não visitou
+
+    if (
+        !passaporteJogador.paisesVisitados
+            .includes(paisId)
+    ) {
+
+        passaporteJogador.paisesVisitados
+            .push(paisId);
+
+        console.log(
+            `🌍 Nova visita: ${paisId}`
+        );
+
+    }
+
+
+    // Criar progresso do país
+
+    if (
+        !passaporteJogador.progressoPorPais[paisId]
+    ) {
+
+        passaporteJogador.progressoPorPais[paisId] = {
+
+            iniciado: true,
+
+            completado: false,
+
+            pontos: 0,
+
+            acertos: 0,
+
+            erros: 0,
+
+            maiorSequencia: 0
+
+        };
+
+    }
+
+}
+
+
+// =========================================================
+// 🛂 CONQUISTAR CARIMBO
+// =========================================================
+
+function conquistarCarimbo(paisId) {
+
+    if (!paisId) return;
+
+
+    // Evita carimbo duplicado
+
+    if (
+        passaporteJogador.carimbos
+            .includes(paisId)
+    ) {
+
+        return false;
+
+    }
+
+
+    passaporteJogador.carimbos
+        .push(paisId);
+
+
+    console.log(
+        `🛂 Carimbo conquistado: ${paisId}`
+    );
+
+
+    // Verifica conquistas relacionadas
+
+    verificarConquistasPassaporte();
+
+
+    return true;
+
+}
+
+
+// =========================================================
+// 🏆 COMPLETAR PAÍS
+// =========================================================
+
+function completarPaisPassaporte(paisId) {
+
+    if (!paisId) return;
+
+
+    registrarVisitaPais(paisId);
+
+
+    const progresso =
+        passaporteJogador.progressoPorPais[paisId];
+
+
+    if (!progresso) return;
+
+
+    progresso.completado = true;
+
+
+    // Registrar estatísticas da Sessão 9
+
+    progresso.pontos =
+        estadoJogador.pontos;
+
+    progresso.acertos =
+        estadoJogador.acertos;
+
+    progresso.erros =
+        estadoJogador.erros;
+
+    progresso.maiorSequencia =
+        estadoJogador.maiorSequencia;
+
+
+    // Adicionar à lista de completos
+
+    if (
+        !passaporteJogador.paisesCompletados
+            .includes(paisId)
+    ) {
+
+        passaporteJogador.paisesCompletados
+            .push(paisId);
+
+    }
+
+
+    // Conquistar carimbo
+
+    conquistarCarimbo(paisId);
+
+
+    console.log(
+        `🎉 País completado: ${paisId}`
+    );
+
+}
+
+
+// =========================================================
+// 🔍 VERIFICAR SE POSSUI CARIMBO
+// =========================================================
+
+function possuiCarimbo(paisId) {
+
+    return passaporteJogador.carimbos
+        .includes(paisId);
+
+}
+
+
+// =========================================================
+// 📊 PROGRESSO DO PASSAPORTE
+// =========================================================
+
+function obterProgressoPassaporte() {
+
+    const total =
+        destinosPassaporte.length;
+
+
+    const completados =
+        passaporteJogador.paisesCompletados.length;
+
+
+    return {
+
+        total: total,
+
+        completados: completados,
+
+        carimbos:
+            passaporteJogador.carimbos.length,
+
+        visitados:
+            passaporteJogador.paisesVisitados.length,
+
+        porcentagem:
+            total > 0
+                ? Math.round(
+                    (completados / total) * 100
+                )
+                : 0
+
+    };
+
+}
+
+
+// =========================================================
+// 🌎 OBTER DADOS DE UM PAÍS
+// =========================================================
+
+function obterDadosPassaporte(paisId) {
+
+    const pais =
+        destinosPassaporte.find(
+            destino =>
+                destino.id === paisId
+        );
+
+
+    if (!pais) return null;
+
+
+    const progresso =
+        passaporteJogador.progressoPorPais[paisId];
+
+
+    return {
+
+        id: pais.id,
+
+        nome: pais.nome,
+
+        bandeira: pais.bandeira,
+
+        visitado:
+            passaporteJogador.paisesVisitados
+                .includes(paisId),
+
+        completado:
+            passaporteJogador.paisesCompletados
+                .includes(paisId),
+
+        carimbo:
+            passaporteJogador.carimbos
+                .includes(paisId),
+
+        progresso:
+            progresso || null
+
+    };
+
+}
+
+
+// =========================================================
+// 🌿 REGISTRAR CURIOSIDADE
+// =========================================================
+
+function registrarCuriosidade(
+    paisId,
+    curiosidadeId
+) {
+
+    if (!paisId || !curiosidadeId) return;
+
+
+    const chave =
+        `${paisId}-${curiosidadeId}`;
+
+
+    if (
+        !passaporteJogador.curiosidadesDescobertas
+            .includes(chave)
+    ) {
+
+        passaporteJogador.curiosidadesDescobertas
+            .push(chave);
+
+
+        console.log(
+            `🌿 Curiosidade descoberta: ${chave}`
+        );
+
+    }
+
+}
+
+
+// =========================================================
+// 📚 VERIFICAR CURIOSIDADE
+// =========================================================
+
+function possuiCuriosidade(
+    paisId,
+    curiosidadeId
+) {
+
+    const chave =
+        `${paisId}-${curiosidadeId}`;
+
+
+    return passaporteJogador
+        .curiosidadesDescobertas
+        .includes(chave);
+
+}
+
+
+// =========================================================
+// 🏆 CONQUISTAS DO PASSAPORTE
+// =========================================================
+
+function verificarConquistasPassaporte() {
+
+    if (
+        typeof conquistas === "undefined"
+    ) {
+
+        return;
+
+    }
+
+
+    // 🛂 Todos os 10 carimbos
+
+    if (
+        passaporteJogador.carimbos.length >=
+        destinosPassaporte.length
+    ) {
+
+        desbloquearConquista(
+            "carimbo"
+        );
+
+    }
+
+
+    // 🌍 Todos os países completados
+
+    if (
+        passaporteJogador.paisesCompletados
+            .length >=
+        destinosPassaporte.length
+    ) {
+
+        desbloquearConquista(
+            "mundo-pequeno"
+        );
+
+        desbloquearConquista(
+            "primeira-edicao"
+        );
+
+    }
+
+}
+
+
+// =========================================================
+// 🏆 DESBLOQUEAR CONQUISTA
+// =========================================================
+
+function desbloquearConquista(id) {
+
+    if (
+        typeof conquistas === "undefined"
+    ) {
+
+        return;
+
+    }
+
+
+    const conquista =
+        conquistas.find(
+            item => item.id === id
+        );
+
+
+    if (!conquista) return;
+
+
+    if (conquista.desbloqueada) {
+
+        return;
+
+    }
+
+
+    conquista.desbloqueada = true;
+
+
+    console.log(
+        `🏆 Conquista desbloqueada: ${conquista.nome}`
+    );
+
+
+    // Atualizar lista visual se existir
+
+    if (
+        typeof mostrarConquistas ===
+        "function"
+    ) {
+
+        mostrarConquistas();
+
+    }
+
+}
+
+
+// =========================================================
+// 📖 ABRIR PASSAPORTE
+// =========================================================
+
+function abrirPassaporte() {
+
+    console.log(
+        "📖 Abrindo passaporte..."
+    );
+
+
+    const progresso =
+        obterProgressoPassaporte();
+
+
+    console.log(
+        `🌍 ${progresso.completados}/${progresso.total} países completos`
+    );
+
+
+    console.log(
+        `🛂 ${progresso.carimbos} carimbos conquistados`
+    );
+
+
+    return passaporteJogador;
+
+}
+
+
+// =========================================================
+// 🔄 RESETAR PASSAPORTE
+// =========================================================
+
+function resetarPassaporte() {
+
+    passaporteJogador = {
+
+        paisesVisitados: [],
+
+        paisesCompletados: [],
+
+        carimbos: [],
+
+        curiosidadesDescobertas: [],
+
+        progressoPorPais: {}
+
+    };
+
+
+    console.log(
+        "🔄 Passaporte reiniciado."
+    );
+
+}
+
+
+// =========================================================
+// 📊 RESUMO DO PASSAPORTE
+// =========================================================
+
+function obterResumoPassaporte() {
+
+    const progresso =
+        obterProgressoPassaporte();
+
+
+    return {
+
+        paisesVisitados:
+            progresso.visitados,
+
+        paisesCompletados:
+            progresso.completados,
+
+        carimbos:
+            progresso.carimbos,
+
+        curiosidades:
+            passaporteJogador
+                .curiosidadesDescobertas
+                .length,
+
+        progresso:
+            progresso.porcentagem
+
+    };
+
+  }
