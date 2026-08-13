@@ -2537,5 +2537,412 @@ document.addEventListener(
 
     }
 );
-     
+     /* =========================
+   🧩 SESSÃO 8
+   ❓ QUIZ
+========================= */
+
+
+// =========================================================
+// 🎯 ESTADO DO QUIZ
+// =========================================================
+
+let quizAtual = {
+
+    pais: null,
+
+    perguntaAtual: 0,
+
+    perguntas: [],
+
+    respondida: false
+
+};
+
+
+// =========================================================
+// 📚 CATEGORIAS
+// =========================================================
+
+const categoriasQuiz = {
+
+    BIOMAS: "🌳 Biomas",
+
+    CLIMA: "🌡️ Clima",
+
+    VEGETACAO: "🌱 Vegetação",
+
+    FAUNA: "🐾 Fauna"
+
+};
+
+
+// =========================================================
+// 🎚️ DIFICULDADES
+// =========================================================
+
+const dificuldadesQuiz = {
+
+    FACIL: "Fácil",
+
+    MEDIO: "Médio",
+
+    DIFICIL: "Difícil",
+
+    ESPECIAL: "⭐ Especial"
+
+};
+
+
+// =========================================================
+// ❓ INICIAR QUIZ
+// =========================================================
+
+function iniciarQuizPais(pais, perguntas) {
+
+    quizAtual.pais = pais;
+
+    quizAtual.perguntaAtual = 0;
+
+    quizAtual.perguntas = perguntas;
+
+    quizAtual.respondida = false;
+
+
+    mostrarTela("quiz");
+
+    mostrarPergunta();
+
+}
+
+
+// =========================================================
+// 📝 MOSTRAR PERGUNTA
+// =========================================================
+
+function mostrarPergunta() {
+
+    const pergunta =
+        quizAtual.perguntas[
+            quizAtual.perguntaAtual
+        ];
+
+
+    if (!pergunta) {
+
+        finalizarQuiz();
+
+        return;
+
+    }
+
+
+    quizAtual.respondida = false;
+
+
+    const numero =
+        quizAtual.perguntaAtual + 1;
+
+
+    const total =
+        quizAtual.perguntas.length;
+
+
+    const elementoNumero =
+        document.getElementById("numero-pergunta");
+
+
+    const elementoCategoria =
+        document.getElementById("categoria-pergunta");
+
+
+    const elementoDificuldade =
+        document.getElementById("dificuldade-pergunta");
+
+
+    const elementoTexto =
+        document.getElementById("texto-pergunta");
+
+
+    const elementoAlternativas =
+        document.getElementById("alternativas");
+
+
+    if (elementoNumero) {
+
+        elementoNumero.textContent =
+            `Pergunta ${numero}/${total}`;
+
+    }
+
+
+    if (elementoCategoria) {
+
+        elementoCategoria.textContent =
+            pergunta.categoria;
+
+    }
+
+
+    if (elementoDificuldade) {
+
+        elementoDificuldade.textContent =
+            pergunta.dificuldade;
+
+    }
+
+
+    if (elementoTexto) {
+
+        elementoTexto.textContent =
+            pergunta.pergunta;
+
+    }
+
+
+    if (elementoAlternativas) {
+
+        elementoAlternativas.innerHTML = "";
+
+
+        pergunta.alternativas.forEach(
+            (alternativa, indice) => {
+
+                const botao =
+                    document.createElement("button");
+
+
+                botao.className =
+                    "alternativa";
+
+
+                botao.textContent =
+                    `${String.fromCharCode(65 + indice)}) ${alternativa}`;
+
+
+                botao.onclick = () => {
+
+                    responderPergunta(indice);
+
+                };
+
+
+                elementoAlternativas.appendChild(
+                    botao
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+// =========================================================
+// 🎯 RESPONDER PERGUNTA
+// =========================================================
+
+function responderPergunta(indiceEscolhida) {
+
+    if (quizAtual.respondida) return;
+
+
+    const pergunta =
+        quizAtual.perguntas[
+            quizAtual.perguntaAtual
+        ];
+
+
+    if (!pergunta) return;
+
+
+    quizAtual.respondida = true;
+
+
+    const botoes =
+        document.querySelectorAll(
+            ".alternativa"
+        );
+
+
+    botoes.forEach(
+        (botao, indice) => {
+
+            botao.disabled = true;
+
+
+            // ✅ RESPOSTA CORRETA
+
+            if (
+                indice ===
+                pergunta.resposta
+            ) {
+
+                botao.classList.add(
+                    "correta"
+                );
+
+            }
+
+
+            // ❌ RESPOSTA ERRADA
+
+            if (
+                indice ===
+                indiceEscolhida &&
+                indice !== pergunta.resposta
+            ) {
+
+                botao.classList.add(
+                    "errada"
+                );
+
+            }
+
+        }
+    );
+
+
+    // Envia o resultado para a Sessão 9
+
+    registrarRespostaQuiz(
+        pergunta,
+        indiceEscolhida === pergunta.resposta
+    );
+
+
+    setTimeout(
+        proximaPergunta,
+        1000
+    );
+
+}
+
+
+// =========================================================
+// ➡️ PRÓXIMA PERGUNTA
+// =========================================================
+
+function proximaPergunta() {
+
+    quizAtual.perguntaAtual++;
+
+    mostrarPergunta();
+
+}
+
+
+// =========================================================
+// 🏁 FINALIZAR QUIZ
+// =========================================================
+
+function finalizarQuiz() {
+
+    quizAtual.respondida = false;
+
+
+    // A Sessão 9 poderá assumir
+    // a pontuação e as vidas.
+
+    mostrarResultado();
+
+}
+
+
+// =========================================================
+// 📊 REGISTRAR RESPOSTA
+// =========================================================
+
+function registrarRespostaQuiz(
+    pergunta,
+    acertou
+) {
+
+    /*
+        A Sessão 9 será responsável por:
+
+        ⭐ Pontos
+        ❤️ Vidas
+        ✅ Acertos
+        ❌ Erros
+        🔥 Multiplicadores
+    */
+
+
+    console.log(
+        "Resposta:",
+        acertou
+            ? "CORRETA"
+            : "ERRADA"
+    );
+
+}
+
+
+// =========================================================
+// ⭐ PERGUNTA ESPECIAL
+// =========================================================
+
+function ehPerguntaEspecial(pergunta) {
+
+    return pergunta.dificuldade ===
+           dificuldadesQuiz.ESPECIAL;
+
+}
+
+
+// =========================================================
+// 🎲 EMBARALHAR PERGUNTAS
+// =========================================================
+
+function embaralharPerguntas(perguntas) {
+
+    return [...perguntas].sort(
+        () => Math.random() - 0.5
+    );
+
+}
+
+
+// =========================================================
+// 🔢 ORGANIZAR PERGUNTAS
+// =========================================================
+
+function organizarPerguntas(perguntas) {
+
+    const faceis =
+        perguntas.filter(
+            p => p.dificuldade === "Fácil"
+        );
+
+    const medias =
+        perguntas.filter(
+            p => p.dificuldade === "Médio"
+        );
+
+    const dificeis =
+        perguntas.filter(
+            p => p.dificuldade === "Difícil"
+        );
+
+    const especiais =
+        perguntas.filter(
+            p => p.dificuldade === "⭐ Especial"
+        );
+
+
+    return [
+
+        ...embaralharPerguntas(faceis),
+
+        ...embaralharPerguntas(medias),
+
+        ...embaralharPerguntas(dificeis),
+
+        ...embaralharPerguntas(especiais)
+
+    ];
+
+  }
             
