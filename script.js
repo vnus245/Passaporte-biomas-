@@ -935,667 +935,834 @@ const paises = [
       "🌿 A vegetação mediterrânea é importante em várias regiões.",
       "🐈 O lince-ibérico é uma espécie emblemática da Península Ibérica."
     ]
-  }
-};
+  },
+               // =========================================================
+// 🇫🇷 FRANÇA
+// =========================================================
 
-          
-          "Sushi",
-                "Tacos",
-                "Feijoada"
-            ],
-            correta: 0,
-            referencia: true
-        }
+franca: {
+  nome: "França",
+  bandeira: "🇫🇷",
 
-    ],
+  perguntas: [
 
+    // 🟢 FÁCIL
+    {
+      dificuldade: "facil",
+      categoria: "Clima",
+      pergunta: "Qual clima influencia boa parte das regiões da França?",
+      alternativas: {
+        A: "Polar",
+        B: "Desértico",
+        C: "Temperado",
+        D: "Equatorial"
+      },
+      resposta: "C",
+      pontos: 10
+    },
 
-    dificil: [
+    {
+      dificuldade: "facil",
+      categoria: "Fauna",
+      pergunta: "Qual destes animais pode ser encontrado em áreas da França?",
+      alternativas: {
+        A: "Raposa-vermelha",
+        B: "Canguru",
+        C: "Panda-gigante",
+        D: "Girafa"
+      },
+      resposta: "A",
+      pontos: 10
+    },
 
-        {
-            pergunta: "Por que o clima da França apresenta diferenças entre suas regiões?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Por causa da influência oceânica, do relevo, da latitude e da distância do mar",
-                "Porque todo o território possui exatamente o mesmo relevo",
-                "Porque a França está localizada em uma região equatorial",
-                "Porque não existem áreas montanhosas no país"
-            ],
-            correta: 0
-        },
+    {
+      dificuldade: "facil",
+      categoria: "Vegetação",
+      pergunta: "Qual tipo de paisagem vegetal é comum em partes da França?",
+      alternativas: {
+        A: "Floresta tropical",
+        B: "Florestas temperadas",
+        C: "Tundra",
+        D: "Savana africana"
+      },
+      resposta: "B",
+      pontos: 10
+    },
 
-        {
-            pergunta: "Como os Alpes influenciam as condições ambientais do sudeste da França?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "A altitude provoca temperaturas mais baixas e influencia a distribuição das precipitações",
-                "Faz toda a região possuir clima tropical",
-                "Impede completamente a formação de rios",
-                "Transforma toda a região em um deserto"
-            ],
-            correta: 0
-        },
+    // 🟡 MÉDIO
+    {
+      dificuldade: "medio",
+      categoria: "Bioma",
+      pergunta: "Qual ambiente aparece em regiões montanhosas da França?",
+      alternativas: {
+        A: "Deserto tropical",
+        B: "Floresta equatorial",
+        C: "Manguezal",
+        D: "Ambientes alpinos"
+      },
+      resposta: "D",
+      pontos: 20
+    },
 
-        {
-            pergunta: "Qual destes nomes aparece como personagem em uma famosa história sobre um crítico de culinária?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Anton Ego",
-                "Sherlock Holmes",
-                "Hércules",
-                "Peter Pan"
-            ],
-            correta: 0,
-            referencia: true
-        }
+    {
+      dificuldade: "medio",
+      categoria: "Fauna",
+      pergunta: "Qual animal pode ser encontrado nos Alpes franceses?",
+      alternativas: {
+        A: "Cabra-montês",
+        B: "Camelo",
+        C: "Canguru",
+        D: "Elefante"
+      },
+      resposta: "A",
+      pontos: 20
+    },
 
-    ],
+    {
+      dificuldade: "medio",
+      categoria: "Clima",
+      pergunta: "Como costuma ser o clima de regiões próximas ao Mediterrâneo na França?",
+      alternativas: {
+        A: "Polar",
+        B: "Mediterrâneo",
+        C: "Equatorial",
+        D: "Desértico extremo"
+      },
+      resposta: "B",
+      pontos: 20
+    },
 
+    // 🔴 DIFÍCIL
+    {
+      dificuldade: "dificil",
+      categoria: "Vegetação",
+      pergunta: "A vegetação mediterrânea francesa é adaptada principalmente a:",
+      alternativas: {
+        A: "Gelo permanente",
+        B: "Chuvas de neve o ano inteiro",
+        C: "Verões quentes e relativamente secos",
+        D: "Clima equatorial"
+      },
+      resposta: "C",
+      pontos: 30
+    },
 
-    especial: {
+    {
+      dificuldade: "dificil",
+      categoria: "Bioma",
+      pergunta: "Qual formação natural está relacionada às regiões montanhosas dos Alpes?",
+      alternativas: {
+        A: "Ambientes alpinos",
+        B: "Caatinga",
+        C: "Savana tropical",
+        D: "Floresta amazônica"
+      },
+      resposta: "A",
+      pontos: 30
+    },
 
-        pergunta: "Qual alternativa reúne corretamente diferentes características naturais encontradas na França?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Clima oceânico, região mediterrânea e áreas montanhosas nos Alpes e Pireneus",
-            "Clima equatorial, floresta amazônica e grandes geleiras",
-            "Clima polar em todo o território e ausência de montanhas",
-            "Clima desértico em todo o país e ausência de rios"
-        ],
-        correta: 0
+    {
+      dificuldade: "dificil",
+      categoria: "Sociedade",
+      pergunta: "Qual região francesa possui forte identidade cultural e também língua própria além do francês?",
+      alternativas: {
+        A: "Bretanha",
+        B: "Sibéria",
+        C: "Patagônia",
+        D: "Alasca"
+      },
+      resposta: "A",
+      pontos: 30
+    },
 
+    // ⭐ ESPECIAL
+    {
+      dificuldade: "especial",
+      categoria: "Natureza",
+      pergunta: "Por que a França possui diferentes paisagens naturais?",
+      alternativas: {
+        A: "Porque possui diferentes relevos, regiões climáticas e influência marítima",
+        B: "Porque todo o país é deserto",
+        C: "Porque todo o território possui clima tropical",
+        D: "Porque não existem montanhas"
+      },
+      resposta: "A",
+      pontos: 50
     }
+  ],
 
+  referencias: [
+    "🥐 Referência: memes sobre croissants e a culinária francesa.",
+    "🗼 Referência: memes envolvendo a Torre Eiffel e Paris."
+  ],
+
+  curiosidades: [
+    "🗼 A Torre Eiffel é um dos monumentos mais conhecidos do mundo.",
+    "🏔️ A França possui regiões dos Alpes e dos Pireneus.",
+    "🥐 A culinária francesa possui grande influência mundial."
+  ]
 },
+
+
+// =========================================================
+// 🇩🇪 ALEMANHA
+// =========================================================
+
 alemanha: {
+  nome: "Alemanha",
+  bandeira: "🇩🇪",
 
-facil: [
+  perguntas: [
 
+    // 🟢 FÁCIL
     {
-        pergunta: "Qual é a capital da Alemanha?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Munique",
-            "Berlim",
-            "Hamburgo",
-            "Frankfurt"
-        ],
-        correta: 1
+      dificuldade: "facil",
+      categoria: "Bioma",
+      pergunta: "Qual tipo de floresta é encontrado em várias áreas da Alemanha?",
+      alternativas: {
+        A: "Floresta tropical",
+        B: "Floresta temperada",
+        C: "Savana",
+        D: "Tundra"
+      },
+      resposta: "B",
+      pontos: 10
     },
 
     {
-        pergunta: "Qual tipo de clima predomina em grande parte da Alemanha?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "Polar",
-            "Equatorial",
-            "Temperado",
-            "Desértico"
-        ],
-        correta: 2
+      dificuldade: "facil",
+      categoria: "Fauna",
+      pergunta: "Qual animal pode ser encontrado na fauna alemã?",
+      alternativas: {
+        A: "Raposa-vermelha",
+        B: "Canguru",
+        C: "Girafa",
+        D: "Panda"
+      },
+      resposta: "A",
+      pontos: 10
     },
 
     {
-        pergunta: "Qual destes animais pode ser encontrado em áreas naturais da Alemanha?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Canguru",
-            "Onça-pintada",
-            "Panda-gigante",
-            "Javali"
-        ],
-        correta: 3
+      dificuldade: "facil",
+      categoria: "Clima",
+      pergunta: "Qual é o clima predominante em grande parte da Alemanha?",
+      alternativas: {
+        A: "Equatorial",
+        B: "Desértico",
+        C: "Temperado",
+        D: "Tropical"
+      },
+      resposta: "C",
+      pontos: 10
+    },
+
+    // 🟡 MÉDIO
+    {
+      dificuldade: "medio",
+      categoria: "Vegetação",
+      pergunta: "As florestas alemãs são formadas principalmente por:",
+      alternativas: {
+        A: "Vegetação tropical",
+        B: "Florestas temperadas",
+        C: "Vegetação desértica",
+        D: "Vegetação de manguezal"
+      },
+      resposta: "D",
+      pontos: 20
+    },
+
+    {
+      dificuldade: "medio",
+      categoria: "Fauna",
+      pergunta: "Qual animal é encontrado em florestas e áreas rurais da Alemanha?",
+      alternativas: {
+        A: "Veado",
+        B: "Canguru",
+        C: "Elefante",
+        D: "Girafa"
+      },
+      resposta: "A",
+      pontos: 20
+    },
+
+    {
+      dificuldade: "medio",
+      categoria: "Clima",
+      pergunta: "Os invernos alemães podem apresentar:",
+      alternativas: {
+        A: "Temperaturas muito elevadas",
+        B: "Neve e temperaturas baixas",
+        C: "Clima equatorial",
+        D: "Seca tropical"
+      },
+      resposta: "B",
+      pontos: 20
+    },
+
+    // 🔴 DIFÍCIL
+    {
+      dificuldade: "dificil",
+      categoria: "Bioma",
+      pergunta: "A Floresta Negra é conhecida principalmente por:",
+      alternativas: {
+        A: "Ser uma região de floresta no sudoeste da Alemanha",
+        B: "Ser um deserto",
+        C: "Ser uma floresta tropical",
+        D: "Ser uma região polar"
+      },
+      resposta: "A",
+      pontos: 30
+    },
+
+    {
+      dificuldade: "dificil",
+      categoria: "Vegetação",
+      pergunta: "Qual característica é comum às florestas temperadas alemãs?",
+      alternativas: {
+        A: "Ausência total de árvores",
+        B: "Vegetação adaptada às estações do ano",
+        C: "Apenas plantas tropicais",
+        D: "Vegetação exclusivamente aquática"
+      },
+      resposta: "B",
+      pontos: 30
+    },
+
+    {
+      dificuldade: "dificil",
+      categoria: "Sociedade",
+      pergunta: "Qual bebida aparece frequentemente associada à cultura alemã?",
+      alternativas: {
+        A: "Chá de manga",
+        B: "Mate",
+        C: "Cerveja",
+        D: "Água de coco"
+      },
+      resposta: "D",
+      pontos: 30
+    },
+
+    // ⭐ ESPECIAL
+    {
+      dificuldade: "especial",
+      categoria: "Natureza",
+      pergunta: "Qual conjunto representa melhor a natureza alemã?",
+      alternativas: {
+        A: "Desertos e clima tropical",
+        B: "Florestas temperadas, rios e regiões montanhosas",
+        C: "Floresta amazônica e savanas",
+        D: "Tundra e gelo permanente"
+      },
+      resposta: "B",
+      pontos: 50
     }
+  ],
 
-],
+  referencias: [
+    "🥨 Referência: memes sobre pretzels e comida alemã.",
+    "🚗 Referência: memes sobre carros alemães."
+  ],
 
-
-medio: [
-
-    {
-        pergunta: "Qual tipo de vegetação é comum em várias regiões da Alemanha?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Florestas temperadas",
-            "Vegetação de desertos quentes",
-            "Florestas tropicais",
-            "Vegetação de tundra"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Qual formação montanhosa está presente no sul da Alemanha?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Andes",
-            "Himalaia",
-            "Alpes",
-            "Montanhas Rochosas"
-        ],
-        correta: 2
-    },
-
-    {
-        pergunta: "Qual destas opções apresenta uma floresta famosa localizada na Alemanha?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "Floresta Amazônica",
-            "Floresta Negra",
-            "Floresta de Sherwood",
-            "Floresta Boreal Canadense"
-        ],
-        correta: 1,
-        referencia: true
-    }
-
-],
-
-
-dificil: [
-
-    {
-        pergunta: "Como a localização da Alemanha influencia seu clima?",
-        categoria: "🌡️ Clima",
-        alternativas: [
-            "A posição na Europa Central e a influência do Oceano Atlântico contribuem para um clima temperado com variações regionais",
-            "A localização próxima ao Equador faz o país possuir clima equatorial",
-            "A proximidade com o Polo Sul provoca clima polar em todo o território",
-            "A ausência de influência marítima impede mudanças climáticas"
-        ],
-        correta: 0
-    },
-
-    {
-        pergunta: "Como as áreas montanhosas podem influenciar a vegetação da Alemanha?",
-        categoria: "🌱 Vegetação",
-        alternativas: [
-            "As montanhas impedem completamente o crescimento de plantas",
-            "A altitude pode alterar temperatura e umidade, favorecendo diferentes tipos de vegetação",
-            "As montanhas fazem toda a vegetação ser tropical",
-            "O relevo transforma todas as áreas montanhosas em desertos"
-        ],
-        correta: 1
-    },
-
-    {
-        pergunta: "Qual destes animais é associado a ambientes naturais encontrados na Alemanha?",
-        categoria: "🐾 Fauna",
-        alternativas: [
-            "Leão",
-            "Girafa",
-            "Lobo",
-            "Canguru"
-        ],
-        correta: 2
-    },
-
-    {
-    pergunta: "Qual tipo de vegetação é encontrado em áreas de clima temperado da Alemanha?",
-    categoria: "🌳 Biomas",
-    alternativas: [
-        "Florestas temperadas",
-        "Adidas",
-        "Florestas tropicais",
-        "Vegetação desértica"
-    ],
-    correta: 0,
-    referencia: true
-}
-
-],
-
-
-especial: {
-
-    pergunta: "Qual alternativa reúne corretamente características naturais da Alemanha?",
-    categoria: "🌳 Biomas",
-    alternativas: [
-        "Clima equatorial, florestas tropicais e grandes savanas",
-        "Clima polar, tundra em todo o território e ausência de rios",
-        "Clima desértico, vegetação de cactos e ausência de montanhas",
-        "Clima temperado, florestas temperadas, rios importantes e áreas montanhosas no sul"
-    ],
-    correta: 3
-
-}
-
+  curiosidades: [
+    "🌲 A Floresta Negra fica no sudoeste da Alemanha.",
+    "🏰 O país possui muitos castelos históricos.",
+    "🌊 Grandes rios, como o Reno, atravessam o território alemão."
+  ]
 },
+
+
+// =========================================================
+// 🇮🇹 ITÁLIA
+// =========================================================
+
 italia: {
+  nome: "Itália",
+  bandeira: "🇮🇹",
 
-    facil: [
+  perguntas: [
 
-        {
-            pergunta: "Qual é a capital da Itália?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Milão",
-                "Roma",
-                "Veneza",
-                "Nápoles"
-            ],
-            correta: 1
-        },
+    // 🟢 FÁCIL
+    {
+      dificuldade: "facil",
+      categoria: "Clima",
+      pergunta: "Qual clima é muito comum em várias regiões da Itália?",
+      alternativas: {
+        A: "Mediterrâneo",
+        B: "Polar",
+        C: "Equatorial",
+        D: "Desértico"
+      },
+      resposta: "A",
+      pontos: 10
+    },
 
-        {
-            pergunta: "Qual tipo de clima é comum em grande parte da Itália?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Clima mediterrâneo",
-                "Clima equatorial",
-                "Clima polar",
-                "Clima desértico"
-            ],
-            correta: 0
-        },
+    {
+      dificuldade: "facil",
+      categoria: "Fauna",
+      pergunta: "Qual animal pode ser encontrado na fauna italiana?",
+      alternativas: {
+        A: "Canguru",
+        B: "Lobo",
+        C: "Panda",
+        D: "Girafa"
+      },
+      resposta: "B",
+      pontos: 10
+    },
 
-        {
-            pergunta: "Qual destes animais pode ser encontrado em áreas naturais da Itália?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Canguru",
-                "Onça-pintada",
-                "Lobo",
-                "Panda-gigante"
-            ],
-            correta: 2
-        }
+    {
+      dificuldade: "facil",
+      categoria: "Vegetação",
+      pergunta: "Qual árvore é muito associada às regiões mediterrâneas da Itália?",
+      alternativas: {
+        A: "Oliveira",
+        B: "Sequoia",
+        C: "Palmeira amazônica",
+        D: "Bétula polar"
+      },
+      resposta: "C",
+      pontos: 10
+    },
 
-    ],
+    // 🟡 MÉDIO
+    {
+      dificuldade: "medio",
+      categoria: "Bioma",
+      pergunta: "Qual ambiente caracteriza muitas regiões costeiras italianas?",
+      alternativas: {
+        A: "Tundra",
+        B: "Deserto polar",
+        C: "Vegetação mediterrânea",
+        D: "Floresta equatorial"
+      },
+      resposta: "D",
+      pontos: 20
+    },
 
+    {
+      dificuldade: "medio",
+      categoria: "Fauna",
+      pergunta: "Qual animal é nativo de algumas regiões montanhosas da Itália?",
+      alternativas: {
+        A: "Cabra-montês",
+        B: "Canguru",
+        C: "Girafa",
+        D: "Camelo"
+      },
+      resposta: "A",
+      pontos: 20
+    },
 
-    medio: [
+    {
+      dificuldade: "medio",
+      categoria: "Clima",
+      pergunta: "Como são geralmente os verões das regiões mediterrâneas italianas?",
+      alternativas: {
+        A: "Muito frios",
+        B: "Quentes e relativamente secos",
+        C: "Sempre com neve",
+        D: "Equatoriais"
+      },
+      resposta: "C",
+      pontos: 20
+    },
 
-        {
-            pergunta: "Qual formação vegetal é comum em áreas de clima mediterrâneo da Itália?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "Vegetação adaptada a verões quentes e secos",
-                "Vegetação de tundra",
-                "Florestas equatoriais",
-                "Vegetação de desertos polares"
-            ],
-            correta: 0
-        },
+    // 🔴 DIFÍCIL
+    {
+      dificuldade: "dificil",
+      categoria: "Bioma",
+      pergunta: "Qual cadeia montanhosa fica ao norte da Itália?",
+      alternativas: {
+        A: "Andes",
+        B: "Himalaia",
+        C: "Alpes",
+        D: "Montanhas Rochosas"
+      },
+      resposta: "D",
+      pontos: 30
+    },
 
-        {
-            pergunta: "Qual cadeia montanhosa atravessa grande parte da Península Itálica?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Andes",
-                "Apeninos",
-                "Himalaia",
-                "Montanhas Rochosas"
-            ],
-            correta: 1
-        },
+    {
+      dificuldade: "dificil",
+      categoria: "Vegetação",
+      pergunta: "A vegetação mediterrânea italiana é adaptada principalmente:",
+      alternativas: {
+        A: "Às condições quentes e secas do verão",
+        B: "Ao gelo permanente",
+        C: "Às chuvas equatoriais",
+        D: "À tundra"
+      },
+      resposta: "A",
+      pontos: 30
+    },
 
-        {
-            pergunta: "Qual destes animais é encontrado em ambientes naturais da Itália?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Giorno Giovanna",
-                "Lince-europeu",
-                "Canguru",
-                "Pinguim-imperador"
-            ],
-            correta: 1,
-            referencia: true
-        }
+    {
+      dificuldade: "dificil",
+      categoria: "Sociedade",
+      pergunta: "Qual alimento é mundialmente associado à culinária italiana?",
+      alternativas: {
+        A: "Sushi",
+        B: "Pizza",
+        C: "Taco",
+        D: "Cuscuz marroquino"
+      },
+      resposta: "B",
+      pontos: 30
+    },
 
-    ],
-
-
-    dificil: [
-
-        {
-            pergunta: "Por que existem diferenças climáticas entre o norte e o sul da Itália?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Porque há diferenças de latitude, altitude, relevo e influência marítima",
-                "Porque toda a Itália possui clima equatorial",
-                "Porque o país está localizado próximo ao Polo Norte",
-                "Porque não existem diferenças de relevo"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Como os Alpes influenciam as condições ambientais do norte da Itália?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "A altitude influencia a temperatura e a distribuição das precipitações, favorecendo diferentes tipos de vegetação",
-                "Transformam toda a região em um deserto",
-                "Fazem toda a região possuir clima tropical",
-                "Impedem completamente o crescimento de plantas"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Qual destes animais é associado aos ambientes naturais montanhosos encontrados na Itália?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Super Mario",
-                "Íbex-alpino",
-                "Elefante-africano",
-                "Girafa"
-            ],
-            correta: 1,
-            referencia: true
-        }
-
-    ],
-
-
-    especial: {
-
-        pergunta: "Qual alternativa reúne corretamente características naturais encontradas na Itália?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Alpes, Apeninos, áreas mediterrâneas e diferentes tipos de vegetação",
-            "Floresta Amazônica, clima equatorial e grandes savanas",
-            "Tundra em todo o território e clima polar",
-            "Desertos quentes cobrindo a maior parte do país"
-        ],
-        correta: 0
-
+    // ⭐ ESPECIAL
+    {
+      dificuldade: "especial",
+      categoria: "Natureza",
+      pergunta: "Qual conjunto representa características naturais da Itália?",
+      alternativas: {
+        A: "Amazônia, clima equatorial e savanas",
+        B: "Tundra e gelo permanente",
+        C: "Alpes, clima mediterrâneo e vegetação variada",
+        D: "Deserto do Saara e savana"
+      },
+      resposta: "C",
+      pontos: 50
     }
+  ],
 
+  referencias: [
+    "🍕 Referência: memes sobre pizza italiana.",
+    "🍝 Referência: memes sobre massas e o jeito italiano de falar."
+  ],
+
+  curiosidades: [
+    "🍕 A pizza napolitana possui origem em Nápoles.",
+    "🏔️ Os Alpes ficam ao norte da Itália.",
+    "🏛️ Roma possui enorme quantidade de patrimônios históricos."
+  ]
 },
+
+
+// =========================================================
+// 🇬🇧 REINO UNIDO
+// =========================================================
+
 reinoUnido: {
+  nome: "Reino Unido",
+  bandeira: "🇬🇧",
 
-    facil: [
+  perguntas: [
 
-        {
-            pergunta: "Qual é a capital do Reino Unido?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Londres",
-                "Manchester",
-                "Liverpool",
-                "Edimburgo"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Qual tipo de clima é comum em grande parte do Reino Unido?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Clima equatorial",
-                "Clima polar",
-                "Clima temperado e úmido",
-                "Clima desértico"
-            ],
-            correta: 2
-        },
-
-        {
-            pergunta: "Qual destes animais pode ser encontrado em áreas naturais do Reino Unido?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Raposa-vermelha",
-                "Canguru",
-                "Onça-pintada",
-                "Panda-gigante"
-            ],
-            correta: 0
-        }
-
-    ],
-
-
-    medio: [
-
-        {
-            pergunta: "Qual tipo de vegetação é comum em várias áreas rurais do Reino Unido?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "Florestas tropicais",
-                "Campos e pastagens",
-                "Vegetação desértica",
-                "Florestas equatoriais"
-            ],
-            correta: 1
-        },
-
-        {
-            pergunta: "Qual formação de relevo é encontrada em áreas do norte do Reino Unido?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Montanhas Rochosas",
-                "Alpes",
-                "Highlands da Escócia",
-                "Hogwarts"
-            ],
-            correta: 2,
-            referencia: true
-        },
-
-        {
-            pergunta: "Qual fator contribui para a presença de vegetação verde durante boa parte do ano no Reino Unido?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "A influência marítima e a ocorrência frequente de chuvas",
-                "A ausência completa de precipitação",
-                "O clima desértico predominante",
-                "A presença de temperaturas tropicais durante todo o ano"
-            ],
-            correta: 0
-        }
-
-    ],
-
-
-    dificil: [
-
-        {
-            pergunta: "Por que o clima do Reino Unido apresenta temperaturas geralmente moderadas?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Por causa da influência marítima e das correntes oceânicas",
-                "Porque o país está localizado próximo ao Equador",
-                "Porque todo o território possui clima tropical",
-                "Porque não recebe influência de massas de ar"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Qual destas plantas pode representar uma espécie típica de ambientes naturais do Reino Unido?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "Mandrágora",
-                "Carvalho",
-                "Cacto-do-deserto",
-                "Palmeira tropical"
-            ],
-            correta: 1,
-            referencia: true
-        },
-
-        {
-            pergunta: "Como o relevo montanhoso pode influenciar a vegetação do Reino Unido?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Pode criar diferentes condições de temperatura e umidade conforme a altitude",
-                "Impede completamente o crescimento de plantas",
-                "Transforma todas as montanhas em desertos",
-                "Faz todo o território possuir vegetação tropical"
-            ],
-            correta: 0
-        }
-
-    ],
-
-
-    especial: {
-
-        pergunta: "Qual alternativa reúne corretamente características naturais do Reino Unido?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Clima temperado e úmido, campos, pastagens e áreas montanhosas",
-            "Clima equatorial, florestas tropicais e grandes savanas",
-            "Clima polar em todo o território e geleiras permanentes",
-            "Clima desértico, pouca chuva e vegetação de cactos"
-        ],
-        correta: 0
-
+    // 🟢 FÁCIL
+    {
+      dificuldade: "facil",
+      categoria: "Clima",
+      pergunta: "Como é o clima predominante no Reino Unido?",
+      alternativas: {
+        A: "Temperado e oceânico",
+        B: "Equatorial",
+        C: "Desértico",
+        D: "Tropical"
+      },
+      resposta: "A",
+      pontos: 10
     },
-    curiosidades: [
-    "O Reino Unido é formado por quatro países: Inglaterra, Escócia, País de Gales e Irlanda do Norte.",
-    
-    "A Escócia possui as Highlands, uma região conhecida por suas montanhas, vales e paisagens naturais.",
-    
-    "O Reino Unido possui milhares de quilômetros de litoral e recebe forte influência do Oceano Atlântico."
-],
 
+    {
+      dificuldade: "facil",
+      categoria: "Fauna",
+      pergunta: "Qual animal pode ser encontrado no Reino Unido?",
+      alternativas: {
+        A: "Canguru",
+        B: "Raposa-vermelha",
+        C: "Girafa",
+        D: "Panda"
+      },
+      resposta: "B",
+      pontos: 10
+    },
+
+    {
+      dificuldade: "facil",
+      categoria: "Vegetação",
+      pergunta: "Qual tipo de vegetação aparece em várias áreas do Reino Unido?",
+      alternativas: {
+        A: "Floresta amazônica",
+        B: "Savana",
+        C: "Campos e pastagens",
+        D: "Tundra tropical"
+      },
+      resposta: "C",
+      pontos: 10
+    },
+
+    // 🟡 MÉDIO
+    {
+      dificuldade: "medio",
+      categoria: "Bioma",
+      pergunta: "Qual ambiente é comum em regiões rurais do Reino Unido?",
+      alternativas: {
+        A: "Deserto",
+        B: "Floresta equatorial",
+        C: "Campos temperados",
+        D: "Savana tropical"
+      },
+      resposta: "D",
+      pontos: 20
+    },
+
+    {
+      dificuldade: "medio",
+      categoria: "Fauna",
+      pergunta: "Qual animal é encontrado em áreas rurais britânicas?",
+      alternativas: {
+        A: "Raposa-vermelha",
+        B: "Elefante",
+        C: "Canguru",
+        D: "Camelo"
+      },
+      resposta: "A",
+      pontos: 20
+    },
+
+    {
+      dificuldade: "medio",
+      categoria: "Clima",
+      pergunta: "Por estar cercado pelo oceano, o Reino Unido sofre forte influência:",
+      alternativas: {
+        A: "Do clima desértico",
+        B: "Do clima equatorial",
+        C: "Do clima marítimo",
+        D: "Do clima polar"
+      },
+      resposta: "B",
+      pontos: 20
+    },
+
+    // 🔴 DIFÍCIL
+    {
+      dificuldade: "dificil",
+      categoria: "Bioma",
+      pergunta: "As áreas de charneca e campos são importantes em algumas regiões do Reino Unido. Elas são exemplos de:",
+      alternativas: {
+        A: "Ambientes temperados",
+        B: "Florestas tropicais",
+        C: "Desertos",
+        D: "Manguezais"
+      },
+      resposta: "D",
+      pontos: 30
+    },
+
+    {
+      dificuldade: "dificil",
+      categoria: "Clima",
+      pergunta: "Qual fator ajuda a manter temperaturas relativamente moderadas no Reino Unido?",
+      alternativas: {
+        A: "Influência do oceano",
+        B: "Proximidade do Equador",
+        C: "Deserto ao redor do país",
+        D: "Gelo permanente"
+      },
+      resposta: "A",
+      pontos: 30
+    },
+
+    {
+      dificuldade: "dificil",
+      categoria: "Sociedade",
+      pergunta: "Qual bebida é frequentemente associada à cultura britânica?",
+      alternativas: {
+        A: "Mate",
+        B: "Chá",
+        C: "Guaraná",
+        D: "Café turco"
+      },
+      resposta: "B",
+      pontos: 30
+    },
+
+    // ⭐ ESPECIAL
+    {
+      dificuldade: "especial",
+      categoria: "Natureza",
+      pergunta: "Qual conjunto descreve melhor o ambiente do Reino Unido?",
+      alternativas: {
+        A: "Clima equatorial e floresta tropical",
+        B: "Clima desértico e savana",
+        C: "Tundra e gelo permanente",
+        D: "Clima oceânico, campos e áreas de floresta temperada"
+      },
+      resposta: "C",
+      pontos: 50
+    }
+  ],
+
+  referencias: [
+    "☕ Referência: memes sobre os britânicos tomando chá em qualquer situação.",
+    "🌧️ Referência: memes sobre a famosa chuva britânica."
+  ],
+
+  curiosidades: [
+    "🌧️ O clima do Reino Unido é bastante influenciado pelo oceano.",
+    "🏰 O território possui muitos castelos históricos.",
+    "🍵 O chá possui forte presença na cultura britânica."
+  ]
 },
+
+
+// =========================================================
+// 🇮🇸 ISLÂNDIA
+// =========================================================
+
 islandia: {
+  nome: "Islândia",
+  bandeira: "🇮🇸",
 
-    facil: [
+  perguntas: [
 
-        {
-            pergunta: "Qual é a capital da Islândia?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Akureyri",
-                "Reykjavík",
-                "Vík",
-                "Keflavík"
-            ],
-            correta: 1
-        },
-
-        {
-            pergunta: "Qual característica climática é comum na Islândia?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Temperaturas geralmente baixas e clima influenciado pelo oceano",
-                "Clima equatorial durante todo o ano",
-                "Clima desértico extremamente seco",
-                "Clima tropical com temperaturas muito elevadas"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Qual destes animais pode ser encontrado naturalmente na Islândia?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Leão",
-                "Canguru",
-                "Raposa-do-ártico",
-                "Tigre"
-            ],
-            correta: 2
-        }
-
-    ],
-
-
-    medio: [
-
-        {
-            pergunta: "Qual tipo de vegetação é comum em algumas áreas da Islândia?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "Vegetação rasteira e campos de gramíneas",
-                "Florestas tropicais",
-                "Vegetação de deserto quente",
-                "Florestas equatoriais"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Qual fenômeno natural está relacionado à atividade vulcânica da Islândia?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Grandes dunas de areia",
-                "Erupções vulcânicas",
-                "Monções tropicais",
-                "Tempestades de areia"
-            ],
-            correta: 1
-        },
-
-        {
-            pergunta: "Qual destas opções representa uma influência importante sobre o clima da Islândia?",
-            categoria: "🌡️ Clima",
-            alternativas: [
-                "Vikings",
-                "Correntes marítimas do Atlântico Norte",
-                "Clima equatorial",
-                "Desertos do Saara"
-            ],
-            correta: 1,
-            referencia: true
-        }
-
-    ],
-
-
-    dificil: [
-
-        {
-            pergunta: "Por que a Islândia possui uma grande quantidade de áreas vulcânicas?",
-            categoria: "🌳 Biomas",
-            alternativas: [
-                "Porque está localizada em uma região de encontro e afastamento de placas tectônicas",
-                "Porque está localizada sobre uma grande área desértica",
-                "Porque possui clima equatorial",
-                "Porque não existem movimentos tectônicos na região"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Como as baixas temperaturas influenciam a vegetação de muitas regiões da Islândia?",
-            categoria: "🌱 Vegetação",
-            alternativas: [
-                "Favorecem principalmente vegetação rasteira e espécies adaptadas ao frio",
-                "Favorecem florestas tropicais muito densas",
-                "Fazem crescer grandes palmeiras naturalmente",
-                "Favorecem apenas plantas de regiões desérticas"
-            ],
-            correta: 0
-        },
-
-        {
-            pergunta: "Qual destes animais está associado à fauna encontrada nas águas próximas à Islândia?",
-            categoria: "🐾 Fauna",
-            alternativas: [
-                "Godzilla",
-                "Girafa",
-                "Baleia",
-                "Elefante"
-            ],
-            correta: 2,
-            referencia: true
-        }
-
-    ],
-
-
-    especial: {
-
-        pergunta: "Qual alternativa reúne corretamente características naturais da Islândia?",
-        categoria: "🌳 Biomas",
-        alternativas: [
-            "Vulcões, geleiras, campos e áreas de clima frio",
-            "Florestas tropicais, savanas e clima equatorial",
-            "Desertos quentes e vegetação de cactos",
-            "Florestas equatoriais e grandes rios tropicais"
-        ],
-        correta: 0
-
+    // 🟢 FÁCIL
+    {
+      dificuldade: "facil",
+      categoria: "Clima",
+      pergunta: "Como é o clima predominante da Islândia?",
+      alternativas: {
+        A: "Tropical",
+        B: "Frio e oceânico",
+        C: "Equatorial",
+        D: "Desértico"
+      },
+      resposta: "B",
+      pontos: 10
     },
-curiosidades: [
-    "A Islândia é conhecida como a 'terra do fogo e do gelo' por possuir vulcões ativos e grandes geleiras no mesmo território.",
 
-    "A Islândia possui uma grande atividade geotérmica. O calor do interior da Terra é aproveitado para aquecer casas e produzir energia.",
+    {
+      dificuldade: "facil",
+      categoria: "Fauna",
+      pergunta: "Qual animal é encontrado na Islândia?",
+      alternativas: {
+        A: "Cavalo islandês",
+        B: "Canguru",
+        C: "Girafa",
+        D: "Panda"
+      },
+      resposta: "D",
+      pontos: 10
+    },
 
-    "Em algumas épocas do ano, é possível observar a Aurora Boreal no céu islandês, um dos fenômenos naturais mais impressionantes do planeta."
-],
+    {
+      dificuldade: "facil",
+      categoria: "Bioma",
+      pergunta: "Qual característica natural é muito marcante na Islândia?",
+      alternativas: {
+        A: "Geleiras e vulcões",
+        B: "Floresta amazônica",
+        C: "Deserto tropical",
+        D: "Savana africana"
+      },
+      resposta: "C",
+      pontos: 10
+    },
+
+    // 🟡 MÉDIO
+    {
+      dificuldade: "medio",
+      categoria: "Vegetação",
+      pergunta: "Por causa do clima e do relevo, a Islândia possui relativamente:",
+      alternativas: {
+        A: "Poucas florestas naturais",
+        B: "Grandes florestas tropicais",
+        C: "Florestas amazônicas",
+        D: "Selvas equatoriais"
+      },
+      resposta: "A",
+      pontos: 20
+    },
+
+    {
+      dificuldade: "medio",
+      categoria: "Fauna",
+      pergunta: "Qual ave pode ser encontrada na Islândia?",
+      alternativas: {
+        A: "Tucano",
+        B: "Papagaio tropical",
+        C: "Papagaio amazônico",
+        D: "Papagaio-do-mar"
+      },
+      resposta: "C",
+      pontos: 20
+    },
+
+    {
+      dificuldade: "medio",
+      categoria: "Bioma",
+      pergunta: "Qual fenômeno natural é famoso na Islândia?",
+      alternativas: {
+        A: "Aurora boreal",
+        B: "Monção",
+        C: "Furacão tropical permanente",
+        D: "Tempestade de areia"
+      },
+      resposta: "B",
+      pontos: 20
+    },
+
+    // 🔴 DIFÍCIL
+    {
+      dificuldade: "dificil",
+      categoria: "Geologia",
+      pergunta: "Por que a Islândia possui muitos vulcões?",
+      alternativas: {
+        A: "Porque fica sobre uma região de atividade tectônica",
+        B: "Porque está no deserto",
+        C: "Porque está próxima do Equador",
+        D: "Porque não possui oceanos"
+      },
+      resposta: "D",
+      pontos: 30
+    },
+
+    {
+      dificuldade: "dificil",
+      categoria: "Clima",
+      pergunta: "Qual fenômeno pode ser observado no céu da Islândia durante determinadas épocas do ano?",
+      alternativas: {
+        A: "Aurora boreal",
+        B: "Aurora tropical",
+        C: "Arco-íris permanente",
+        D: "Sol negro"
+      },
+      resposta: "A",
+      pontos: 30
+    },
+
+    {
+      dificuldade: "dificil",
+      categoria: "Sociedade",
+      pergunta: "Qual atividade é bastante associada à cultura e história islandesa?",
+      alternativas: {
+        A: "Cultura dos vikings",
+        B: "Cultura samurai",
+        C: "Cultura maia",
+        D: "Cultura faraônica"
+      },
+      resposta: "B",
+      pontos: 30
+    },
+
+    // ⭐ ESPECIAL
+    {
+      dificuldade: "especial",
+      categoria: "Natureza",
+      pergunta: "Qual conjunto representa melhor a natureza da Islândia?",
+      alternativas: {
+        A: "Florestas tropicais, savanas e desertos",
+        B: "Clima equatorial e manguezais",
+        C: "Vulcões, geleiras, campos e atividade geotérmica",
+        D: "Desertos quentes e clima tropical"
+      },
+      resposta: "C",
+      pontos: 50
+    }
+  ],
+
+  referencias: [
+    "🌋 Referência: memes sobre a Islândia ter 'vulcão para tudo'.",
+    "❄️ Referência: memes sobre o frio islandês e a pais
