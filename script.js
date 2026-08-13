@@ -1766,3 +1766,11 @@ islandia: {
   referencias: [
     "🌋 Referência: memes sobre a Islândia ter 'vulcão para tudo'.",
     "❄️ Referência: memes sobre o frio islandês e a pais
+     ],
+
+  curiosidades: [
+    "🌋 A Islândia possui intensa atividade vulcânica.",
+    "♨️ A energia geotérmica é muito importante no país.",
+    "🌌 A aurora boreal pode ser observada na Islândia em determinadas épocas."
+  ]
+}
