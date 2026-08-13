@@ -1922,8 +1922,8 @@ function mostrarConquistas() {
 
         item.className = "conquista";
 
-        if (!conquista.desbloqueada) {
-            item.classList.add("bloqueada");
+        if (!conquista.desbloqueada) 
+           item.classList.add("bloqueada");
         }
 
         const nome = conquista.secreta &&
@@ -1965,3 +1965,246 @@ function mostrarConquistas() {
 }
 
 
+  {/* =========================
+   🧩 SESSÃO 6
+   🖥️ TELAS DO JOGO
+   🎨 ESTILO: PIXEL ART + AZUL
+========================= */
+
+
+// =========================================================
+// 🖥️ SISTEMA DE TELAS
+// =========================================================
+
+const telas = {
+
+    inicio: document.getElementById("tela-inicio"),
+
+    paises: document.getElementById("tela-paises"),
+
+    pais: document.getElementById("tela-pais"),
+
+    carregamento: document.getElementById("tela-carregamento"),
+
+    quiz: document.getElementById("tela-quiz"),
+
+    resultado: document.getElementById("tela-resultado"),
+
+    passaporte: document.getElementById("tela-passaporte"),
+
+    mapa: document.getElementById("tela-mapa"),
+
+    conquistas: document.getElementById("tela-conquistas"),
+
+    configuracoes: document.getElementById("tela-configuracoes")
+
+};
+
+
+// =========================================================
+// 🔄 MOSTRAR UMA TELA
+// =========================================================
+
+function mostrarTela(nomeTela) {
+
+    Object.values(telas).forEach(tela => {
+
+        if (tela) {
+            tela.classList.remove("ativa");
+        }
+
+    });
+
+
+    if (telas[nomeTela]) {
+
+        telas[nomeTela].classList.add("ativa");
+
+    }
+
+}
+
+
+// =========================================================
+// 🏠 VOLTAR PARA O MENU
+// =========================================================
+
+function voltarInicio() {
+
+    mostrarTela("inicio");
+
+}
+
+
+// =========================================================
+// 🌍 ABRIR PAÍSES
+// =========================================================
+
+function abrirPaises() {
+
+    mostrarTela("paises");
+
+}
+
+
+// =========================================================
+// 📖 ABRIR INFORMAÇÕES DO PAÍS
+// =========================================================
+
+function abrirPais() {
+
+    mostrarTela("pais");
+
+}
+
+
+// =========================================================
+// ⏳ TELA DE CARREGAMENTO
+// =========================================================
+
+function iniciarCarregamento() {
+
+    mostrarTela("carregamento");
+
+}
+
+
+// =========================================================
+// ❓ ABRIR QUIZ
+// =========================================================
+
+function iniciarQuiz() {
+
+    mostrarTela("quiz");
+
+}
+
+
+// =========================================================
+// 🏁 RESULTADO
+// =========================================================
+
+function mostrarResultado() {
+
+    mostrarTela("resultado");
+
+}
+
+
+// =========================================================
+// 🛂 PASSAPORTE
+// =========================================================
+
+function abrirPassaporte() {
+
+    mostrarTela("passaporte");
+
+}
+
+
+// =========================================================
+// 🗺️ MAPA
+// =========================================================
+
+function abrirMapa() {
+
+    mostrarTela("mapa");
+
+}
+
+
+// =========================================================
+// 🏆 MÉRITOS & CONQUISTAS
+// =========================================================
+
+function abrirConquistas() {
+
+    mostrarTela("conquistas");
+
+    // Usa a função criada na SESSÃO 5
+    mostrarConquistas();
+
+}
+
+
+// =========================================================
+// ⚙️ CONFIGURAÇÕES
+// =========================================================
+
+function abrirConfiguracoes() {
+
+    mostrarTela("configuracoes");
+
+}
+
+
+// =========================================================
+// 🎬 ANIMAÇÃO DE TROCA DE TELA
+// =========================================================
+
+function trocarTela(nomeTela) {
+
+    const telaAtual = document.querySelector(".tela.ativa");
+
+    if (telaAtual) {
+
+        telaAtual.classList.add("saindo");
+
+        setTimeout(() => {
+
+            telaAtual.classList.remove("ativa");
+            telaAtual.classList.remove("saindo");
+
+            mostrarTela(nomeTela);
+
+        }, 200);
+
+    } else {
+
+        mostrarTela(nomeTela);
+
+    }
+
+}
+
+
+// =========================================================
+// 🌎 ABRIR PAÍS COM CARREGAMENTO
+// =========================================================
+
+function viajarParaPais() {
+
+    iniciarCarregamento();
+
+
+    setTimeout(() => {
+
+        iniciarQuiz();
+
+    }, 1500);
+
+}
+
+
+// =========================================================
+// 🎮 INICIAR JOGO
+// =========================================================
+
+function iniciarJogo() {
+
+    trocarTela("paises");
+
+}
+
+
+// =========================================================
+// 🚀 INICIALIZAÇÃO
+// =========================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    mostrarTela("inicio");
+
+});
+     
+            
