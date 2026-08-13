@@ -3501,10 +3501,9 @@ let passaporteJogador = {
     progressoPorPais: {}
 
 };
-
-
+     {
 // =========================================================
-// 🌍 LISTA DOS 10 DESTINOS
+// 🌍 LISTA DOS 10 DESTINOS OFICIAIS
 // =========================================================
 
 const destinosPassaporte = [
@@ -3516,15 +3515,27 @@ const destinosPassaporte = [
     },
 
     {
-        id: "japao",
-        nome: "Japão",
-        bandeira: "🇯🇵"
+        id: "argentina",
+        nome: "Argentina",
+        bandeira: "🇦🇷"
     },
 
     {
-        id: "canada",
-        nome: "Canadá",
-        bandeira: "🇨🇦"
+        id: "uruguai",
+        nome: "Uruguai",
+        bandeira: "🇺🇾"
+    },
+
+    {
+        id: "estados-unidos",
+        nome: "Estados Unidos",
+        bandeira: "🇺🇸"
+    },
+
+    {
+        id: "espanha",
+        nome: "Espanha",
+        bandeira: "🇪🇸"
     },
 
     {
@@ -3534,43 +3545,30 @@ const destinosPassaporte = [
     },
 
     {
+        id: "alemanha",
+        nome: "Alemanha",
+        bandeira: "🇩🇪"
+    },
+
+    {
         id: "italia",
         nome: "Itália",
         bandeira: "🇮🇹"
     },
 
     {
-        id: "australia",
-        nome: "Austrália",
-        bandeira: "🇦🇺"
+        id: "reino-unido",
+        nome: "Reino Unido",
+        bandeira: "🇬🇧"
     },
 
     {
-        id: "egito",
-        nome: "Egito",
-        bandeira: "🇪🇬"
-    },
-
-    {
-        id: "mexico",
-        nome: "México",
-        bandeira: "🇲🇽"
-    },
-
-    {
-        id: "india",
-        nome: "Índia",
-        bandeira: "🇮🇳"
-    },
-
-    {
-        id: "noruega",
-        nome: "Noruega",
-        bandeira: "🇳🇴"
+        id: "islandia",
+        nome: "Islândia",
+        bandeira: "🇮🇸"
     }
 
 ];
-
 
 // =========================================================
 // 🛂 REGISTRAR VISITA
