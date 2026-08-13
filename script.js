@@ -4723,3 +4723,595 @@ function iniciarSistemaDeSalvamento() {
     }
 
 }
+/* =========================
+   🧩 SESSÃO 12
+   🎁 SEGREDOS E EXTRAS
+========================= */
+
+
+// =========================================================
+// 🎁 ESTADO DOS SEGREDOS
+// =========================================================
+
+let estadoSegredos = {
+
+    segredosDescobertos: [],
+
+    objetosEncontrados: [],
+
+    eventosEncontrados: [],
+
+    easterEggsEncontrados: [],
+
+    extrasDesbloqueados: []
+
+};
+
+
+// =========================================================
+// 🕵️ LISTA DE SEGREDOS
+// =========================================================
+
+const segredos = [
+
+    {
+        id: "segredo-01",
+        nome: "???",
+        nomeReal: "O Visitante Misterioso",
+        icone: "🕵️",
+        descricao: "Você encontrou algo que não deveria estar aqui.",
+        tipo: "secreta",
+        descoberto: false
+    },
+
+    {
+        id: "segredo-02",
+        nome: "???",
+        nomeReal: "A Bússola Perdida",
+        icone: "🧭",
+        descricao: "Uma bússola escondida em algum lugar do mapa.",
+        tipo: "objeto",
+        descoberto: false
+    },
+
+    {
+        id: "segredo-03",
+        nome: "???",
+        nomeReal: "Mensagem do Viajante",
+        icone: "📜",
+        descricao: "Uma mensagem deixada por alguém que já percorreu o mundo.",
+        tipo: "easter-egg",
+        descoberto: false
+    }
+
+];
+
+
+// =========================================================
+// 🎁 EXTRAS DESBLOQUEÁVEIS
+// =========================================================
+
+const extrasDesbloqueaveis = [
+
+    {
+        id: "extra-mapa",
+        nome: "Mapa Completo",
+        icone: "🗺️",
+        descricao: "Visualize todos os países no mapa.",
+        desbloqueado: false
+    },
+
+    {
+        id: "extra-curiosidades",
+        nome: "Arquivo de Curiosidades",
+        icone: "📚",
+        descricao: "Veja todas as curiosidades descobertas.",
+        desbloqueado: false
+    },
+
+    {
+        id: "extra-passaporte",
+        nome: "Passaporte Completo",
+        icone: "🛂",
+        descricao: "Veja o passaporte completo da jornada.",
+        desbloqueado: false
+    },
+
+    {
+        id: "extra-mestre",
+        nome: "Modo Mestre",
+        icone: "👑",
+        descricao: "Um desafio especial para jogadores experientes.",
+        desbloqueado: false
+    }
+
+];
+
+
+// =========================================================
+// 🕵️ DESCOBRIR SEGREDO
+// =========================================================
+
+function descobrirSegredo(segredoId) {
+
+    if (!segredoId) return false;
+
+
+    const segredo =
+        segredos.find(
+            item => item.id === segredoId
+        );
+
+
+    if (!segredo) return false;
+
+
+    // Evitar descoberta duplicada
+
+    if (
+        estadoSegredos.segredosDescobertos
+            .includes(segredoId)
+    ) {
+
+        return false;
+
+    }
+
+
+    estadoSegredos.segredosDescobertos
+        .push(segredoId);
+
+
+    segredo.descoberto = true;
+
+
+    console.log(
+        `🕵️ Segredo descoberto: ${segredo.nomeReal}`
+    );
+
+
+    // Verificar extras
+
+    verificarExtras();
+
+
+    // Salvar progresso
+
+    if (
+        typeof salvarProgresso ===
+        "function"
+    ) {
+
+        salvarProgresso();
+
+    }
+
+
+    return true;
+
+}
+
+
+// =========================================================
+// 🔍 VERIFICAR SEGREDO
+// =========================================================
+
+function possuiSegredo(segredoId) {
+
+    return estadoSegredos
+        .segredosDescobertos
+        .includes(segredoId);
+
+}
+
+
+// =========================================================
+// 🗺️ ENCONTRAR OBJETO ESCONDIDO
+// =========================================================
+
+function encontrarObjeto(objetoId) {
+
+    if (!objetoId) return false;
+
+
+    if (
+        estadoSegredos.objetosEncontrados
+            .includes(objetoId)
+    ) {
+
+        return false;
+
+    }
+
+
+    estadoSegredos.objetosEncontrados
+        .push(objetoId);
+
+
+    console.log(
+        `🔎 Objeto encontrado: ${objetoId}`
+    );
+
+
+    verificarExtras();
+
+
+    if (
+        typeof salvarProgresso ===
+        "function"
+    ) {
+
+        salvarProgresso();
+
+    }
+
+
+    return true;
+
+}
+
+
+// =========================================================
+// 🎁 REGISTRAR EVENTO RARO
+// =========================================================
+
+function registrarEventoRaro(eventoId) {
+
+    if (!eventoId) return false;
+
+
+    if (
+        estadoSegredos.eventosEncontrados
+            .includes(eventoId)
+    ) {
+
+        return false;
+
+    }
+
+
+    estadoSegredos.eventosEncontrados
+        .push(eventoId);
+
+
+    console.log(
+        `✨ Evento raro encontrado: ${eventoId}`
+    );
+
+
+    verificarExtras();
+
+
+    if (
+        typeof salvarProgresso ===
+        "function"
+    ) {
+
+        salvarProgresso();
+
+    }
+
+
+    return true;
+
+}
+
+
+// =========================================================
+// 🥚 REGISTRAR EASTER EGG
+// =========================================================
+
+function descobrirEasterEgg(easterEggId) {
+
+    if (!easterEggId) return false;
+
+
+    if (
+        estadoSegredos.easterEggsEncontrados
+            .includes(easterEggId)
+    ) {
+
+        return false;
+
+    }
+
+
+    estadoSegredos.easterEggsEncontrados
+        .push(easterEggId);
+
+
+    console.log(
+        `🥚 Easter egg encontrado: ${easterEggId}`
+    );
+
+
+    verificarExtras();
+
+
+    if (
+        typeof salvarProgresso ===
+        "function"
+    ) {
+
+        salvarProgresso();
+
+    }
+
+
+    return true;
+
+}
+
+
+// =========================================================
+// 🔓 DESBLOQUEAR EXTRA
+// =========================================================
+
+function desbloquearExtra(extraId) {
+
+    const extra =
+        extrasDesbloqueaveis.find(
+            item => item.id === extraId
+        );
+
+
+    if (!extra) return false;
+
+
+    if (extra.desbloqueado) {
+
+        return false;
+
+    }
+
+
+    extra.desbloqueado = true;
+
+
+    if (
+        !estadoSegredos.extrasDesbloqueados
+            .includes(extraId)
+    ) {
+
+        estadoSegredos.extrasDesbloqueados
+            .push(extraId);
+
+    }
+
+
+    console.log(
+        `🎁 Extra desbloqueado: ${extra.nome}`
+    );
+
+
+    if (
+        typeof salvarProgresso ===
+        "function"
+    ) {
+
+        salvarProgresso();
+
+    }
+
+
+    return true;
+
+}
+
+
+// =========================================================
+// 🔐 VERIFICAR EXTRAS
+// =========================================================
+
+function verificarExtras() {
+
+
+    // 🗺️ 3 segredos descobertos
+
+    if (
+        estadoSegredos.segredosDescobertos
+            .length >= 3
+    ) {
+
+        desbloquearExtra(
+            "extra-mapa"
+        );
+
+    }
+
+
+    // 📚 5 objetos ou descobertas
+
+    const descobertas =
+        estadoSegredos.objetosEncontrados
+            .length +
+        estadoSegredos.easterEggsEncontrados
+            .length;
+
+
+    if (descobertas >= 5) {
+
+        desbloquearExtra(
+            "extra-curiosidades"
+        );
+
+    }
+
+
+    // 🛂 Todos os carimbos
+
+    if (
+        typeof passaporteJogador !==
+        "undefined" &&
+        typeof destinosPassaporte !==
+        "undefined"
+    ) {
+
+        if (
+            passaporteJogador.carimbos
+                .length >=
+            destinosPassaporte.length
+        ) {
+
+            desbloquearExtra(
+                "extra-passaporte"
+            );
+
+        }
+
+    }
+
+
+    // 👑 Modo Mestre
+
+    if (
+        typeof conquistas !==
+        "undefined"
+    ) {
+
+        const conquistasDesbloqueadas =
+            conquistas.filter(
+                conquista =>
+                    conquista.desbloqueada
+            ).length;
+
+
+        if (
+            conquistasDesbloqueadas >= 10
+        ) {
+
+            desbloquearExtra(
+                "extra-mestre"
+            );
+
+        }
+
+    }
+
+}
+
+
+// =========================================================
+// 📊 RESUMO DOS SEGREDOS
+// =========================================================
+
+function obterResumoSegredos() {
+
+    return {
+
+        segredos:
+            estadoSegredos
+                .segredosDescobertos
+                .length,
+
+        objetos:
+            estadoSegredos
+                .objetosEncontrados
+                .length,
+
+        eventos:
+            estadoSegredos
+                .eventosEncontrados
+                .length,
+
+        easterEggs:
+            estadoSegredos
+                .easterEggsEncontrados
+                .length,
+
+        extras:
+            estadoSegredos
+                .extrasDesbloqueados
+                .length
+
+    };
+
+}
+
+
+// =========================================================
+// 🔍 OBTER SEGREDOS DESCOBERTOS
+// =========================================================
+
+function obterSegredosDescobertos() {
+
+    return segredos.filter(
+        segredo =>
+            segredo.descoberto
+    );
+
+}
+
+
+// =========================================================
+// 🎁 OBTER EXTRAS DESBLOQUEADOS
+// =========================================================
+
+function obterExtrasDesbloqueados() {
+
+    return extrasDesbloqueaveis.filter(
+        extra =>
+            extra.desbloqueado
+    );
+
+}
+
+
+// =========================================================
+// 🔄 RESETAR SEGREDOS
+// =========================================================
+
+function resetarSegredos() {
+
+    estadoSegredos = {
+
+        segredosDescobertos: [],
+
+        objetosEncontrados: [],
+
+        eventosEncontrados: [],
+
+        easterEggsEncontrados: [],
+
+        extrasDesbloqueados: []
+
+    };
+
+
+    // Resetar lista de segredos
+
+    segredos.forEach(
+        segredo => {
+
+            segredo.descoberto = false;
+
+        }
+    );
+
+
+    // Resetar extras
+
+    extrasDesbloqueaveis.forEach(
+        extra => {
+
+            extra.desbloqueado = false;
+
+        }
+    );
+
+
+    console.log(
+        "🔄 Segredos e extras reiniciados."
+    );
+
+
+    if (
+        typeof salvarProgresso ===
+        "function"
+    ) {
+
+        salvarProgresso();
+
+    }
+
+           }
